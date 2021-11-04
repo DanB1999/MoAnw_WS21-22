@@ -102,6 +102,7 @@ function takePhoto() {
   
   var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
 
+  if(document.getElementById('SaveButton').clicked == true) {
   theImageCapturer.takePhoto()
     .then(blob => {
       var theImageTag = document.getElementById("imageTag");
@@ -111,7 +112,11 @@ function takePhoto() {
 
     })
     .catch(err => alert('Error: ' + err));
-}
+    }
+    var dataImage = localStorage.getItem('Photo taken');
+    document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
+
+  }
 
 function getBase64Image(img) {
   var canvas = document.createElement("canvas");
@@ -126,8 +131,7 @@ function getBase64Image(img) {
   return dataURL.replace(/^data:image\/png;base64,/, "");
 }
 
-var dataImage = localStorage.getItem('Photo taken');
-document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
+
 
 //document.addEventListener("DOMContentLoaded", showPicture);
 
