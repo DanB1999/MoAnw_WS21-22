@@ -106,9 +106,10 @@ function takePhoto() {
       
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      console.log(theImageTag.src);
+      
+      console.log(theImageTag);
 
-      imgData = getBase64Im(theImageTag.src);
+      imgData = getBase64Im(theImageTag);
       localStorage.setItem("picture", imgData); 
       console.log(imgData);
 
