@@ -115,6 +115,7 @@ function takePhoto() {
     if(document.getElementById('loadButton').clicked == true) {
       var dataImage = localStorage.getItem("Photo_taken");
     document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
+    console.log("Button geklickt!")
     document.addEventListener()
     }
     else {
