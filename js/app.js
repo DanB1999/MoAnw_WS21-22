@@ -106,30 +106,18 @@ function takePhoto() {
       
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      var reader = new FileReader();
-      reader.readAsDataURL(blob);
-      reader.onloadend = function() {
-        var base64data = getBase64Image(reader.result);                
-        console.log(base64data);
+      imgData = getBase64Image(theImageTag);
+      localStorage.setItem("picture", imgData);             
+      console.log(imgData);
       }
-      /*
-      
-      
-      /*
-      //imgData = getBase64Image(theImageTag);
-      localStorage.setItem("Photo_taken", imgData);
-      if(localStorage.getItem == imgData) 
-      console.log("Foto gespeichert");
-      */
- 
-    }).catch(err => alert('Error: ' + err));
+    ).catch(err => alert('Error: ' + err));
 
     
     
     
 }
 function loadPicture()  {
-  document.getElementById('tableBanner').src = localStorage['picture'];
+  document.getElementById('tableBanner').src = localStorage.getItem("picture");
 }
 
 
@@ -143,7 +131,7 @@ function getBase64Image(img) {
 
   var dataURL = canvas.toDataURL("image/png");
 
-  return dataURL.replace(/^data:image\/png;base64,/, "");
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
 
