@@ -122,7 +122,7 @@ function getBase64Image(img) {
 
   var dataURL = canvas.toDataURL("images");
 
-  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+  return dataURL.replace(/^data:image;base64,/, "");
 }
 var dataImage = localStorage.getItem('Photo taken');
 document.getElementById('tableBanner').src = "data:images;base64," + dataImage;
