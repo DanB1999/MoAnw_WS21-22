@@ -103,10 +103,10 @@ function takePhoto() {
   var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
   theImageCapturer.takePhoto()
     .then(blob => {
-      /*
+      
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      */
+      
       var reader = new FileReader();
       localStorage['picture'] = reader.readAsBinaryString(blob);
       /*
