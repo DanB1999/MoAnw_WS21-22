@@ -107,9 +107,9 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
       var reader = new FileReader();
-      reader.readAsDataURL(theImageTag);
+      reader.readAsDataURL(blob);
       reader.onloadend = function() {
-        var base64data = reader.result;                
+        var base64data = getBase64Image(reader.result);                
         console.log(base64data);
       }
       /*
