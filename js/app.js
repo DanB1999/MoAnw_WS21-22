@@ -106,7 +106,7 @@ function takePhoto() {
       
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      console.log(theImageTag);
+      console.log(theImageTag.src);
 
       imgData = getBase64Im(theImageTag);
       localStorage.setItem("picture", imgData); 
@@ -139,7 +139,7 @@ function getBase64Image(img) {
 }
 function getBase64Im(img) {
   var reader = new FileReader();
-  reader.readAsDataURL(blob); 
+  reader.readAsDataURL(img); 
   reader.onloadend = function() {
   var base64data = reader.result;                
   console.log(base64data);
