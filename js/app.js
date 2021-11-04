@@ -139,6 +139,7 @@ function getBase64Image(img) {
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 function getBase64Im(img) {
+  var base64data;
   var reader = new FileReader();
   reader.onloadend = function() {
   var base64data = reader.result;               
