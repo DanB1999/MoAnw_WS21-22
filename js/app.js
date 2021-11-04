@@ -112,6 +112,7 @@ function takePhoto() {
     })
     .catch(err => alert('Error: ' + err));
 }
+
 function getBase64Image(img) {
   var canvas = document.createElement("canvas");
   canvas.width = img.width;

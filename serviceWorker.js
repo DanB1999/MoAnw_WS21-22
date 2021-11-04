@@ -31,12 +31,21 @@ self.addEventListener("fetch", fetchEvent => {
   );
 });
 /*
-self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(keys => {
-    return Promise.all(keys.map(key => {
-      if (key != v) return caches.delete(key);
-    }));
-  }));
+self.addEventListener('activate', function(event) {
+
+  var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
+
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheAllowlist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
 */
 self.addEventListener('message', e => {
