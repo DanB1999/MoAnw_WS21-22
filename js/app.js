@@ -106,16 +106,14 @@ function takePhoto() {
       
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      
       var reader = new FileReader();
-          localStorage.setItem("picture",reader.readAsBinaryString(blob));
+      reader.readAsDataURL(reader);
+      reader.onloadend = function() {
+        var base64data = reader.result;                
+        console.log(base64data);
       }
       /*
-      reader.readAsDataURL(e.target.result);
-      reader.onloadend = function() {
-      var base64data = reader.result;                
-      console.log(base64data);
-      */
+      
       
       /*
       //imgData = getBase64Image(theImageTag);
@@ -124,7 +122,7 @@ function takePhoto() {
       console.log("Foto gespeichert");
       */
  
-    ).catch(err => alert('Error: ' + err));
+    }).catch(err => alert('Error: ' + err));
 
     
     
