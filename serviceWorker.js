@@ -30,7 +30,7 @@ self.addEventListener("fetch", fetchEvent => {
     })
   );
 });
-
+/*
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(keys => {
     return Promise.all(keys.map(key => {
@@ -38,7 +38,7 @@ self.addEventListener('activate', e => {
     }));
   }));
 });
-
+*/
 self.addEventListener('message', e => {
   if (e.data === 'skipWaiting') {
     skipWaiting();
