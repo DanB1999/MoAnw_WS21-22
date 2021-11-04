@@ -103,29 +103,35 @@ function takePhoto() {
   var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
   theImageCapturer.takePhoto()
     .then(blob => {
+      /*
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
+      */
       var reader = new FileReader();
-reader.readAsDataURL(blob);
-var base64data=0 
-reader.onloadend = function() {
-  base64data = reader.result;                
-  console.log(base64data);
-}
+      localStorage['picture'] = reader.readAsBinaryString(blob);
+      /*
+      reader.readAsDataURL(blob); 
+      reader.onloadend = function() {
+      var base64data = reader.result;                
+      console.log(base64data);
+      */
+      }
+      /*
       //imgData = getBase64Image(theImageTag);
-      localStorage.setItem("Photo_taken", base64data);
-      
-    }).catch(err => alert('Error: ' + err));
+      localStorage.setItem("Photo_taken", imgData);
+      if(localStorage.getItem == imgData) 
+      console.log("Foto gespeichert");
+      */
+ 
+    ).catch(err => alert('Error: ' + err));
 
     
     
     
 }
-
-if(document.getElementById('loadButton').clicked == true) {
-var dataImage = localStorage.getItem("Photo_taken");
-document.getElementById('tableBanner').src = + dataImage;
-console.log("Button geklickt!");
+function loadPicture()  {
+  document.getElementById('tableBanner').src = localStorage['picture'];
+}
 
 
 function getBase64Image(img) {
@@ -155,4 +161,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-}
+
