@@ -111,13 +111,13 @@ function takePhoto() {
  
     }).catch(err => alert('Error: ' + err));
 
-    if(document.getElementById('SaveButton').clicked == true) {
-  
+    if(document.getElementById('loadButton').clicked == true) {
+      var dataImage = localStorage.getItem("Photo_taken");
+    document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
 
     }
     
-    var dataImage = localStorage.getItem("Photo_taken");
-    document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
+    
 
 
 function getBase64Image(img) {
