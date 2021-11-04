@@ -105,8 +105,16 @@ function takePhoto() {
     .then(blob => {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      imgData = getBase64Image(theImageTag);
-      localStorage.setItem("Photo_taken", imgData);
+      var reader = new FileReader();
+
+// The magic always begins after the Blob is successfully loaded
+reader.onload = function () {
+  // Since it contains the Data URI, we should remove the prefix and keep only Base64 string
+  var b64 = reader.result.replace(/^data:.+;base64,/, '');
+  console.log(b64)
+}
+      //imgData = getBase64Image(theImageTag);
+      localStorage.setItem("Photo_taken", b64);
       if(localStorage.getItem == imgData) 
       console.log("Foto gespeichert");
  
@@ -135,6 +143,7 @@ function getBase64Image(img) {
 
   return dataURL.replace(/^data:image\/png;base64,/, "");
 }
+
 
 
 
