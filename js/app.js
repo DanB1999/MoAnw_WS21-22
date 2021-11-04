@@ -106,16 +106,18 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
       imgData = getBase64Image(theImageTag);
-  if(document.getElementById('SaveButton').clicked == true) {
-  
       localStorage.setItem("Photo taken", imgData);
+      console.log("Foto gespeichert")
+ 
+    }).catch(err => alert('Error: ' + err));
+
+    if(document.getElementById('SaveButton').clicked == true) {
+  
 
     }
     
     var dataImage = localStorage.getItem('Photo taken');
     document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
-
-    }).catch(err => alert('Error: ' + err));
 
 
 function getBase64Image(img) {
