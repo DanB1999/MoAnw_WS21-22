@@ -127,7 +127,7 @@ function getBase64Image(img) {
 }
 
 var dataImage = localStorage.getItem('Photo taken');
-document.getElementById('tableBanner').src = "data:image/jpeg;base64," + dataImage + "<!-- Base64 data -->";
+document.getElementById('tableBanner').src = "data:image/jpeg;charset=utf-8;base64," + dataImage;
 
 //document.addEventListener("DOMContentLoaded", showPicture);
 
