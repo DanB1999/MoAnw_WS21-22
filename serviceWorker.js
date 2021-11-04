@@ -1,7 +1,6 @@
 const staticDevCoffee = "dev-coffee-site-v1";
-var urlsToCache = [
-  '/',
-  'images/t'
+var assets = [
+  
 ]
 
 self.addEventListener("install", installEvent => {
