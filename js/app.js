@@ -108,17 +108,15 @@ function takePhoto() {
       theImageTag.src = URL.createObjectURL(blob);
       
       var reader = new FileReader();
-      reader.onload = 
-            function(e)   {
-                  localStorage['picture'] = e.target.result;
+          localStorage.setItem("picture",reader.readAsBinaryString(blob));
       }
-      reader.readAsDataURL(e.target.result); 
       /*
+      reader.readAsDataURL(e.target.result);
       reader.onloadend = function() {
       var base64data = reader.result;                
       console.log(base64data);
       */
-      }
+      
       /*
       //imgData = getBase64Image(theImageTag);
       localStorage.setItem("Photo_taken", imgData);
