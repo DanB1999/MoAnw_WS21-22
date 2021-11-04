@@ -141,11 +141,9 @@ function getBase64Image(img) {
 function getBase64Im(img) {
   var base64data;
   var reader = new FileReader();
-  reader.onloadend = function() {
+  reader.readAsDataURL(img); 
   var base64data = reader.result;               
   console.log(base64data);
-  }
-reader.readAsDataURL(img); 
 return base64data;
 }
 
