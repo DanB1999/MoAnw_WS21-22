@@ -107,8 +107,8 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
       console.log(theImageTag);
-      console.log(theImageTag.src);
-      imgData = getBase64Image(theImageTag);
+
+      imgData = getBase64Im(theImageTag);
       localStorage.setItem("picture", imgData); 
       console.log(imgData);
 
@@ -136,6 +136,14 @@ function getBase64Image(img) {
   var dataURL = canvas.toDataURL("image/png");
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+function getBase64Im(img) {
+  var reader = new FileReader();
+  reader.readAsDataURL(blob); 
+  reader.onloadend = function() {
+  var base64data = reader.result;                
+  console.log(base64data);
+}
 }
 
 
