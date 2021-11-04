@@ -109,7 +109,7 @@ function takePhoto() {
       
       console.log(blob);
 
-      imgData = getBase64Im(blob);
+      imgData = getBase64Image(blob);
       localStorage.setItem("picture", imgData); 
       console.log(imgData);
 
@@ -138,10 +138,10 @@ function getBase64Image(img) {
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
-function getBase64Im(img) {
+function getBase64Im(blob) {
   var base64data;
   var reader = new FileReader();
-  reader.readAsDataURL(img); 
+  reader.readAsDataURL(blob); 
   var base64data = reader.result;               
   console.log(base64data);
 return base64data;
