@@ -107,7 +107,9 @@ function takePhoto() {
       theImageTag.src = URL.createObjectURL(blob);
       var reader = new FileReader();
       imgData = getBase64Image(theImageTag);
-      localStorage.setItem("Photo_taken", blob);
+      localStorage.setItem("Photo_taken", imgData);
+      if(localStorage.getItem == imgData) 
+      console.log("Foto gespeichert");
  
     }).catch(err => alert('Error: ' + err));
 
@@ -118,7 +120,7 @@ function takePhoto() {
 
 //if(document.getElementById('loadButton').clicked == true) {
 var dataImage = localStorage.getItem("Photo_taken");
-document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;blob," + dataImage;
+document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
 console.log("Button geklickt!");
 
 
