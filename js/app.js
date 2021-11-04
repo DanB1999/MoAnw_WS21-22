@@ -112,19 +112,19 @@ function takePhoto() {
  
     }).catch(err => alert('Error: ' + err));
 
-    if(document.getElementById('loadButton').clicked == true) {
-      var dataImage = localStorage.getItem("Photo_taken");
-    document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
-    console.log("Button geklickt!")
-    document.addEventListener()
-    }
-    else {
-      document.getElementById('tableBanner').src = "";
-
-    }
     
     
+    
+}
+if(document.getElementById('loadButton').clicked == true) {
+var dataImage = localStorage.getItem("Photo_taken");
+document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
+console.log("Button geklickt!")
+}
+else {
+  document.getElementById('tableBanner').src = "";
 
+}
 
 function getBase64Image(img) {
   var canvas = document.createElement("canvas");
@@ -152,4 +152,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-}
+
