@@ -120,12 +120,12 @@ function getBase64Image(img) {
   var ctx = canvas.getContext("2d");
   ctx.drawImage(img, 0, 0);
 
-  var dataURL = canvas.toDataURL("images");
+  var dataURL = canvas.toDataURL("image/png");
 
-  return dataURL.replace(/^data:image;base64,/, "");
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 var dataImage = localStorage.getItem('Photo taken');
-document.getElementById('tableBanner').src = "data:images;base64," + dataImage;
+document.getElementById('tableBanner').innerHTML = "data:image/png;base64," + dataImage;
 
 //document.addEventListener("DOMContentLoaded", showPicture);
 
