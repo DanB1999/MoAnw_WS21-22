@@ -122,7 +122,7 @@ function takePhoto() {
 }
 function loadPicture()  {
   var dataImage = localStorage.getItem('picture');
-  document.getElementById('tableBanner').src = "data:image/png;base64," + dataImage;;
+  document.getElementById('tableBanner').src = "data:image/jpeg;base64," + dataImage;;
 }
 
 
@@ -150,7 +150,7 @@ function getBase64Im(blob) {
     // without additional data: Attributes.
     console.log('Base64 String without Tags- ', 
    base64String.substr(base64String.indexOf(', ') + 1));
-return "data:image/(png|jpg);base64," + base64String;
+return base64String;
 }
 
 
