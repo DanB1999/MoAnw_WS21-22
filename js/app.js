@@ -142,9 +142,15 @@ function getBase64Im(blob) {
   var base64data;
   var reader = new FileReader();
   reader.readAsDataURL(blob); 
-  var base64data = reader.result;               
-  console.log(base64data);
-return base64data;
+  reader.onloadend = function () {
+    var base64String = reader.result;
+    console.log('Base64 String - ', base64String);
+  
+    // Simply Print the Base64 Encoded String,
+    // without additional data: Attributes.
+    console.log('Base64 String without Tags- ', 
+   base64String.substr(base64String.indexOf(', ') + 1));
+return "data:image/(png|jpg);base64," + base64String;
 }
 
 
@@ -161,4 +167,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-
+}
