@@ -125,11 +125,9 @@ function getBase64Image(img) {
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 var dataImage = localStorage.getItem('Photo taken');
-bannerImg = document.getElementById('tableBanner');
-bannerImg.src = "data:images;base64," + dataImage;
+document.getElementById('tableBanner').src = "data:images;base64," + dataImage;
 
-
-document.addEventListener("DOMContentLoaded", showPicture);
+//document.addEventListener("DOMContentLoaded", showPicture);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
