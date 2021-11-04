@@ -124,11 +124,13 @@ function getBase64Image(img) {
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
+function showPicture() {
+  var dataImage = localStorage.getItem('Photo taken');
+  bannerImg = document.getElementById('tableBanner');
+  bannerImg.src = "data:image;base64," + dataImage;
+}
 
-var dataImage = localStorage.getItem('Photo taken');
-bannerImg = document.getElementById('tableBanner');
-bannerImg.src = "data:image;base64," + dataImage;
-document.addEventListener("DOMContentLoaded", showCoffees);
+document.addEventListener("DOMContentLoaded", showPicture);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
