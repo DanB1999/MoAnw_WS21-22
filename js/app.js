@@ -122,7 +122,7 @@ reader.onloadend = function() {
     
 }
 
-//if(document.getElementById('loadButton').clicked == true) {
+if(document.getElementById('loadButton').clicked == true) {
 var dataImage = localStorage.getItem("Photo_taken");
 document.getElementById('tableBanner').src = + dataImage;
 console.log("Button geklickt!");
@@ -155,4 +155,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-
+}
