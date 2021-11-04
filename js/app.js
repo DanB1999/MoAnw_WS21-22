@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+/*
 const coffees = [
   {
     name: "Perspiciatis",
@@ -51,6 +52,8 @@ const showCoffees = () => {
   );
   container.innerHTML = output;
 };
+*/
+
 
 document.addEventListener("DOMContentLoaded", showCoffees);
 
