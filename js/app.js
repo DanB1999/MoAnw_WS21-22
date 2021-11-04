@@ -114,9 +114,7 @@ reader.onloadend = function() {
 }
       //imgData = getBase64Image(theImageTag);
       localStorage.setItem("Photo_taken", base64data);
-      if(localStorage.getItem == imgData) 
-      console.log("Foto gespeichert");
- 
+      
     }).catch(err => alert('Error: ' + err));
 
     
