@@ -106,7 +106,7 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
       imgData = getBase64Image(theImageTag);
-      localStorage.setItem("Photo taken", imgData);
+      localStorage.setItem("Photo_taken", imgData);
       console.log("Foto gespeichert")
  
     }).catch(err => alert('Error: ' + err));
@@ -116,7 +116,7 @@ function takePhoto() {
 
     }
     
-    var dataImage = localStorage.getItem('Photo taken');
+    var dataImage = localStorage.getItem("Photo_taken");
     document.getElementById('tableBanner').src = "data:image/png;charset=utf-8;base64," + dataImage;
 
 
