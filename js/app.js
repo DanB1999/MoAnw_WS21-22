@@ -125,9 +125,9 @@ function getBase64Image(img) {
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
-var dataImage = localStorage.getItem('imgData');
+var dataImage = localStorage.getItem('Photo taken');
 bannerImg = document.getElementById('tableBanner');
-bannerImg.src = "data:image/png;base64," + dataImage;
+bannerImg.src = "data:image;base64," + dataImage;
 document.addEventListener("DOMContentLoaded", showCoffees);
 
 if ("serviceWorker" in navigator) {
