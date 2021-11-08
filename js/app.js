@@ -93,6 +93,7 @@ function getStream(type) {
       mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
     }
     mediaControl.play();
+    theStream=stream;
   })
   .catch(function (err) {
     alert('Error: ' + err);
@@ -105,7 +106,7 @@ function takePhoto() {
     return;
   }
   
-  if (!mediaControl.play()) {
+  if (!theStream) {
     alert('Grab the video stream first!');
     return;
   }
