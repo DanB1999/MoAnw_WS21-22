@@ -105,7 +105,7 @@ function takePhoto() {
     return;
   }
   
-  if (!theStream) {
+  if (!mediaControl.play()) {
     alert('Grab the video stream first!');
     return;
   }
