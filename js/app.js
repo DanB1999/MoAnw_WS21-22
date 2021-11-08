@@ -83,7 +83,7 @@ function getStream(type) {
   var constraints = {};
   constraints[type] = true;
 
-  getUserMedia(constraints, function (stream) {
+  getUserMedia(constraint).then(function (stream) {
     var mediaControl = document.querySelector(type);
     if ('srcObject' in mediaControl) {
       mediaControl.srcObject = stream;
@@ -92,8 +92,9 @@ function getStream(type) {
     } else {
       mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
     }
-    theStream = stream;
-  }, function (err) {
+    mediaControl.play();
+  })
+  .catch(function (err) {
     alert('Error: ' + err);
   });
 }
