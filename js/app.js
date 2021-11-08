@@ -73,7 +73,7 @@ function getUserMedia(constraints) {
 
 var theStream;
 
-function getStream() {
+function getStream(type) {
   if (!navigator.mediaDevices && !navigator.getUserMedia && !navigator.webkitGetUserMedia &&
     !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
     alert('User Media API not supported.');
