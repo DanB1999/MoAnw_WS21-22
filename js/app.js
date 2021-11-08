@@ -122,7 +122,7 @@ function takePhoto() {
 }
 function loadPicture()  {
   var dataImage = localStorage.getItem('picture');
-  document.getElementById('tableBanner').src = "data:image/jpeg;base64," + dataImage;;
+  document.getElementById('tableBanner').src = dataImage;;
 }
 
 
