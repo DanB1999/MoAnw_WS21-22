@@ -53,29 +53,38 @@ const showCoffees = () => {
   container.innerHTML = output;
 };
 */
-function getUserMedia(options, successCallback, failureCallback) {
-  var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+function getUserMedia(constraints) {
+  // if Promise-based API is available, use it
+  if (navigator.mediaDevices) {
+    return navigator.mediaDevices.getUserMedia(constraints);
+  }
+    
+  // otherwise try falling back to old, possibly prefixed API...
+  var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia || navigator.msGetUserMedia;
-  if (api) {
-    return api.bind(navigator)(options, successCallback, failureCallback);
+    
+  if (legacyApi) {
+    // ...and promisify it
+    return new Promise(function (resolve, reject) {
+      legacyApi.bind(navigator)(constraints, resolve, reject);
+    });
   }
 }
 
 var theStream;
 
 function getStream() {
-  if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
+  if (!navigator.mediaDevices && !navigator.getUserMedia && !navigator.webkitGetUserMedia &&
     !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
     alert('User Media API not supported.');
     return;
   }
   
-  var constraints = {
-    video: true
-  };
+  var constraints = {};
+  constraints[type] = true;
 
   getUserMedia(constraints, function (stream) {
-    var mediaControl = document.querySelector('video');
+    var mediaControl = document.querySelector(type);
     if ('srcObject' in mediaControl) {
       mediaControl.srcObject = stream;
     } else if (navigator.mozGetUserMedia) {
