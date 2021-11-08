@@ -83,7 +83,7 @@ function getStream(type) {
   var constraints = {};
   constraints[type] = true;
 
-  getUserMedia(constraint).then(function (stream) {
+  getUserMedia(constraints).then(function (stream) {
     var mediaControl = document.querySelector(type);
     if ('srcObject' in mediaControl) {
       mediaControl.srcObject = stream;
