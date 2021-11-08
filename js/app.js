@@ -110,7 +110,7 @@ function takePhoto() {
       console.log(blob);
 
       imgData = getBase64Im(blob);
-      localStorage.setItem("picture", imgData.src); 
+      localStorage.setItem("picture", theImageTag.src); 
       console.log(imgData);
 
       }
