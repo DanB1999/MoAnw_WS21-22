@@ -125,37 +125,6 @@ function loadPicture()  {
   document.getElementById('tableBanner').src = dataImage;;
 }
 
-
-function getBase64Image(img) {
-  var canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
-
-  var ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0, 0);
-
-  var dataURL = canvas.toDataURL("image/png");
-
-  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
-function getBase64Im(blob) {
-  var base64data;
-  var reader = new FileReader();
-  reader.readAsDataURL(blob); 
-  reader.onloadend = function () {
-    var base64String = reader.result;
-    console.log('Base64 String - ', base64String);
-  
-    // Simply Print the Base64 Encoded String,
-    // without additional data: Attributes.
-    console.log('Base64 String without Tags- ', 
-   base64String.substr(base64String.indexOf(', ') + 1));
-return base64String;
-}
-
-
-
-
 //document.addEventListener("DOMContentLoaded", showPicture);
 
 if ("serviceWorker" in navigator) {
@@ -167,4 +136,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-}
+
