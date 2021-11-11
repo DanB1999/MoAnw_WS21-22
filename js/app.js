@@ -113,12 +113,18 @@ function takePhoto() {
       })
       */
 
-      console.log(blob);
+      const myFile = new File([blob], "image.jpeg", {
+        type: blob.type,
+      });
+      console.log(myFile);
+
     })
     .catch(err => alert('Error: ' + err));
-  
+
+    
   // Set the Width and Height you want your resized image to be
-var width = 180; 
+/*
+  var width = 180; 
 var height = 240; 
 
 
@@ -131,8 +137,10 @@ ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
 
 
 var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
-                                               //jpeg file in the base64 format.
-console.log(jpegFile);
+
+//jpeg file in the base64 format.
+*/
+
 
 }
 
