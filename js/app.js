@@ -131,7 +131,7 @@ console.log(jpegFile);
 }
 
 function loadPicture()  {
-  var dataImage = localStorage.getItem('picture');
+  var dataImage = localStorage.getItem('ImageTag');
   document.getElementById('tableBanner').src = dataImage;;
 }
 
