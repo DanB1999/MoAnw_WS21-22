@@ -152,7 +152,7 @@ function loadPicture()  {
     cache.addAll("ImageTag",theImageTag.src);
   })
   */
-  document.getElementById('tableBanner').src = dataImage;;
+  document.getElementById('tableBanner').value = dataImage;;
 
 }
 //Geoloction-Feature
