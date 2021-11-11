@@ -1,3 +1,4 @@
+import { staticDevCoffee } from 'serviceWorker.js'
 const container = document.querySelector(".container");
 /*
 const images = [
