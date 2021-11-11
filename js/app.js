@@ -126,6 +126,7 @@ ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
 
 var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
                                                //jpeg file in the base64 format.
+console.log(jpegFile);
 }
 
 function loadPicture()  {
