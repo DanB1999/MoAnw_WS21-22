@@ -1,4 +1,3 @@
-import staticDevCoffee  from '../serviceWorker.js'
 const container = document.querySelector(".container");
 /*
 const images = [
@@ -109,7 +108,7 @@ function takePhoto() {
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
       localStorage.setItem("ImageTag",theImageTag.src);
       
-      self.caches.open(staticDevCoffee).then(cache => {
+      self.caches.open("dev-coffee-site-v1").then(cache => {
         cache.addAll("ImageTag",theImageTag.src);
       })
 
