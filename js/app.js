@@ -109,7 +109,7 @@ function takePhoto() {
       localStorage.setItem("ImageTag",theImageTag.src);
       
       self.caches.open("dev-coffee-site-v1").then(cache => {
-        cache.addAll("ImageTag",theImageTag.src);
+        cache.put("ImageTag",theImageTag.src);
       })
 
       console.log(blob);
