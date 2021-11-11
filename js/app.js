@@ -106,17 +106,18 @@ function takePhoto() {
     .then(blob => {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
-      /*
-      self.caches.open("dev-coffee-site-v1").then(cache => {
-        cache.put("ImageTag",theImageTag.src);
-      })
-      */
+      
+      
+      
 
       const myFile = new File([blob], "image.jpeg", {
         type: blob.type,
       });
       console.log(myFile);
-      localStorage.setItem("ImageFile",myFile);
+      self.caches.open("dev-coffee-site-v1").then(cache => {
+        cache.add("/images/"+myFile);
+      })
+      //localStorage.setItem("ImageFile",myFile);
 
 
     })
@@ -147,11 +148,11 @@ var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a
 
 function loadPicture()  {
   var dataImage = localStorage.getItem('ImageFile');
-  /*
+  
   self.caches.open(staticDevCoffee).then(cache => {
-    cache.addAll("ImageTag",theImageTag.src);
+    cache.match("/images/" + myFile);
   })
-  */
+  
   document.getElementById('tableBanner').value = dataImage;;
 
 }
