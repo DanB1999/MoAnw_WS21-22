@@ -107,10 +107,11 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
       localStorage.setItem("ImageTag",theImageTag.src);
-      
+      /*
       self.caches.open("dev-coffee-site-v1").then(cache => {
         cache.put("ImageTag",theImageTag.src);
       })
+      */
 
       console.log(blob);
     })
@@ -136,7 +137,7 @@ console.log(jpegFile);
 }
 
 function loadPicture()  {
-  //var dataImage = localStorage.getItem('ImageTag');
+  var dataImage = localStorage.getItem('ImageTag');
   /*
   self.caches.open(staticDevCoffee).then(cache => {
     cache.addAll("ImageTag",theImageTag.src);
