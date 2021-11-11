@@ -62,6 +62,8 @@ function getUserMedia(options, successCallback, failureCallback) {
 }
 
 var theStream;
+var theRecorder;
+var recordedChunks = [];
 
 function getStream() {
   if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
@@ -70,12 +72,11 @@ function getStream() {
     return;
   }
   
-  var constraints = {
-    video: true
-  };
+  var constraints = {};
+  constraints[type] = true;
 
   getUserMedia(constraints, function (stream) {
-    var mediaControl = document.querySelector('video');
+    var mediaControl = document.querySelector(type);
     if ('srcObject' in mediaControl) {
       mediaControl.srcObject = stream;
     } else if (navigator.mozGetUserMedia) {
@@ -84,6 +85,7 @@ function getStream() {
       mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
     }
     theStream = stream;
+    mediaControl.play();
   }, function (err) {
     alert('Error: ' + err);
   });
