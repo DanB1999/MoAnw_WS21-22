@@ -137,9 +137,11 @@ console.log(jpegFile);
 
 function loadPicture()  {
   var dataImage = localStorage.getItem('ImageTag');
+  /*
   self.caches.open(staticDevCoffee).then(cache => {
     cache.addAll("ImageTag",theImageTag.src);
   })
+  */
   document.getElementById('tableBanner').src = dataImage;;
 
 }
