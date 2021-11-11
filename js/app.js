@@ -106,7 +106,6 @@ function takePhoto() {
     .then(blob => {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
-      localStorage.setItem("ImageTag",theImageTag.src);
       /*
       self.caches.open("dev-coffee-site-v1").then(cache => {
         cache.put("ImageTag",theImageTag.src);
@@ -117,6 +116,8 @@ function takePhoto() {
         type: blob.type,
       });
       console.log(myFile);
+      localStorage.setItem("ImageFile",myFile);
+
 
     })
     .catch(err => alert('Error: ' + err));
@@ -145,7 +146,7 @@ var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a
 }
 
 function loadPicture()  {
-  var dataImage = localStorage.getItem('ImageTag');
+  var dataImage = localStorage.getItem('ImageFile');
   /*
   self.caches.open(staticDevCoffee).then(cache => {
     cache.addAll("ImageTag",theImageTag.src);
