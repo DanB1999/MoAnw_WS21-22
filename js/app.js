@@ -111,16 +111,6 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
       
-      
-      /*
-      const myFile = new File([blob], "image.jpeg", {
-        type: blob.type,
-      });
-      console.log(myFile);
-      self.caches.open("dev-coffee-site-v1").then(cache => {
-        cache.add("/images/"+myFile);
-      })
-      */
       var reader = new FileReader();
       reader.readAsDataURL(blob);
       reader.onloadend = function() {
@@ -130,32 +120,11 @@ function takePhoto() {
       }
     })
     .catch(err => alert('Error: ' + err));
-
-    
-  // Set the Width and Height you want your resized image to be
-
-  var width = 180; 
-var height = 240; 
-
-
-
-//jpeg file in the base64 format.
-
-
-
 }
 
 function loadPicture()  {
-  
   var base64 = localStorage.getItem('ImageTag');
-  
-  /*
-  self.caches.open(staticDevCoffee).then(cache => {
-    cache.match("/images/" + myFile);
-  })
-  */
-  const byteCharacters = atob(base64);
-  document.getElementById('tableBanner').src = byteCharacters;;
+  document.getElementById('tableBanner').src = base64;;
 
 }
 //Geoloction-Feature
