@@ -30,7 +30,7 @@ self.addEventListener("fetch", fetchEvent => {
     })
   );
 });
-/*
+
 self.addEventListener('activate', function(event) {
 
   var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
@@ -47,7 +47,7 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-*/
+
 self.addEventListener('message', e => {
   if (e.data === 'skipWaiting') {
     skipWaiting();
