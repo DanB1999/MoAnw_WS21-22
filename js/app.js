@@ -111,7 +111,6 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
       
-      localStorage.setItem("ImageTag",theImageTag.src);
       
       /*
       const myFile = new File([blob], "image.jpeg", {
@@ -122,6 +121,17 @@ function takePhoto() {
         cache.add("/images/"+myFile);
       })
       */
+      var canvas = document.createElement('canvas');  // Dynamically Create a Canvas Element
+      canvas.width  = width;  // Set the width of the Canvas
+      canvas.height = height;  // Set the height of the Canvas
+      var ctx = canvas.getContext("2d");  // Get the "context" of the canvas 
+      var img = document.getElementById("imageTag");  // The id of your image container
+      ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
+
+      var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
+
+      localStorage.setItem("ImageTag",jpegFile);
+
      
 
 
@@ -130,23 +140,14 @@ function takePhoto() {
 
     
   // Set the Width and Height you want your resized image to be
-/*
+
   var width = 180; 
 var height = 240; 
 
 
-var canvas = document.createElement('canvas');  // Dynamically Create a Canvas Element
-canvas.width  = width;  // Set the width of the Canvas
-canvas.height = height;  // Set the height of the Canvas
-var ctx = canvas.getContext("2d");  // Get the "context" of the canvas 
-var img = document.getElementById("imageTag");  // The id of your image container
-ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
-
-
-var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
 
 //jpeg file in the base64 format.
-*/
+
 
 
 }
