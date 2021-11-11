@@ -127,6 +127,7 @@ function loadPicture()  {
   document.getElementById('tableBanner').src = base64;;
 
 }
+/*
 function downloadImg()  {
   var theImageTag = document.getElementById("imageTag");
   var a = document.createElement(theImageTag.src);
@@ -134,6 +135,7 @@ function downloadImg()  {
   a.href = window.URL.createObjectURL(theImageTag.src);
   a.click();
   }
+  */
 //Geoloction-Feature
 var target = document.getElementById('target');
 var watchId;
