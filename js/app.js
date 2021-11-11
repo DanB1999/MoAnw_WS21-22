@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 /*
-const coffees = [
+const images = [
   {
     name: "Perspiciatis",
     image: "images/coffee1.jpg"
@@ -106,10 +106,11 @@ function takePhoto() {
     .then(blob => {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
+      console.log(blob);
     })
     .catch(err => alert('Error: ' + err));
-}
-// Set the Width and Height you want your resized image to be
+  
+  // Set the Width and Height you want your resized image to be
 var width = 180; 
 var height = 240; 
 
@@ -124,6 +125,8 @@ ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
 
 var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
                                                //jpeg file in the base64 format.
+}
+
 function loadPicture()  {
   var dataImage = localStorage.getItem('picture');
   document.getElementById('tableBanner').src = dataImage;;
