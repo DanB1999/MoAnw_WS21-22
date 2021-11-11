@@ -153,13 +153,16 @@ var height = 240;
 }
 
 function loadPicture()  {
-  var dataImage = localStorage.getItem('ImageTag');
+  
+  var base64 = localStorage.getItem('ImageTag');
+  
   /*
   self.caches.open(staticDevCoffee).then(cache => {
     cache.match("/images/" + myFile);
   })
   */
-  document.getElementById('tableBanner').src = dataImage;;
+  const byteCharacters = atob(base64);
+  document.getElementById('tableBanner').src = byteCharacters;;
 
 }
 //Geoloction-Feature
