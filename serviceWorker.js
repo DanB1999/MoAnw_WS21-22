@@ -13,7 +13,7 @@ self.addEventListener("install", installEvent => {
     .then(cache => {
       cache.addAll(assets);
     })
-    .catch(console.log)
+    .catch(console.log(""))
   );
 });
 
