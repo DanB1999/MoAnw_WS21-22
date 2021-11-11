@@ -53,38 +53,29 @@ const showCoffees = () => {
   container.innerHTML = output;
 };
 */
-function getUserMedia(constraints) {
-  // if Promise-based API is available, use it
-  if (navigator.mediaDevices) {
-    return navigator.mediaDevices.getUserMedia(constraints);
-  }
-    
-  // otherwise try falling back to old, possibly prefixed API...
-  var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+function getUserMedia(options, successCallback, failureCallback) {
+  var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia || navigator.msGetUserMedia;
-    
-  if (legacyApi) {
-    // ...and promisify it
-    return new Promise(function (resolve, reject) {
-      legacyApi.bind(navigator)(constraints, resolve, reject);
-    });
+  if (api) {
+    return api.bind(navigator)(options, successCallback, failureCallback);
   }
 }
 
 var theStream;
 
-function getStream(type) {
-  if (!navigator.mediaDevices && !navigator.getUserMedia && !navigator.webkitGetUserMedia &&
+function getStream() {
+  if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
     !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
     alert('User Media API not supported.');
     return;
   }
   
-  var constraints = {};
-  constraints[type] = true;
+  var constraints = {
+    video: true
+  };
 
-  getUserMedia(constraints).then(function (stream) {
-    var mediaControl = document.querySelector(type);
+  getUserMedia(constraints, function (stream) {
+    var mediaControl = document.querySelector('video');
     if ('srcObject' in mediaControl) {
       mediaControl.srcObject = stream;
     } else if (navigator.mozGetUserMedia) {
@@ -92,10 +83,8 @@ function getStream(type) {
     } else {
       mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
     }
-    mediaControl.play();
-    theStream=stream;
-  })
-  .catch(function (err) {
+    theStream = stream;
+  }, function (err) {
     alert('Error: ' + err);
   });
 }
@@ -112,20 +101,29 @@ function takePhoto() {
   }
   
   var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
+
   theImageCapturer.takePhoto()
     .then(blob => {
-      
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      localStorage.setItem("picture", theImageTag.src); 
-
-      }
-    ).catch(err => alert('Error: ' + err));
-
-    
-    
-    
+    })
+    .catch(err => alert('Error: ' + err));
 }
+// Set the Width and Height you want your resized image to be
+var width = 180; 
+var height = 240; 
+
+
+var canvas = document.createElement('canvas');  // Dynamically Create a Canvas Element
+canvas.width  = width;  // Set the width of the Canvas
+canvas.height = height;  // Set the height of the Canvas
+var ctx = canvas.getContext("2d");  // Get the "context" of the canvas 
+var img = document.getElementById("imageTag");  // The id of your image container
+ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
+
+
+var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
+                                               //jpeg file in the base64 format.
 function loadPicture()  {
   var dataImage = localStorage.getItem('picture');
   document.getElementById('tableBanner').src = dataImage;;
