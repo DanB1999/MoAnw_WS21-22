@@ -84,7 +84,9 @@ function getStream(type) {
     } else {
       mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
     }
-    theStream = stream;
+    if(type=='video') {
+      theStream = stream;
+    }
     mediaControl.play();
   }, function (err) {
     alert('Error: ' + err);
