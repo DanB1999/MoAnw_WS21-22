@@ -121,20 +121,13 @@ function takePhoto() {
         cache.add("/images/"+myFile);
       })
       */
-      var canvas = document.createElement('canvas');  // Dynamically Create a Canvas Element
-      canvas.width  = width;  // Set the width of the Canvas
-      canvas.height = height;  // Set the height of the Canvas
-      var ctx = canvas.getContext("2d");  // Get the "context" of the canvas 
-      var img = document.getElementById("imageTag");  // The id of your image container
-      ctx.drawImage(img,0,0,width,height);  // Draw your image to the canvas
-
-      var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a 
-
-      localStorage.setItem("ImageTag",jpegFile);
-
-     
-
-
+      var reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = function() {
+        var base64data = reader.result;
+        console.log(base64data);
+        localStorage.setItem("ImageTag",base64data);
+      }
     })
     .catch(err => alert('Error: ' + err));
 
