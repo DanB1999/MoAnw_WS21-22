@@ -107,9 +107,9 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
       
+      localStorage.setItem("ImageTag",theImageTag.src);
       
-      
-
+      /*
       const myFile = new File([blob], "image.jpeg", {
         type: blob.type,
       });
@@ -117,7 +117,8 @@ function takePhoto() {
       self.caches.open("dev-coffee-site-v1").then(cache => {
         cache.add("/images/"+myFile);
       })
-      //localStorage.setItem("ImageFile",myFile);
+      */
+     
 
 
     })
@@ -147,13 +148,13 @@ var jpegFile = canvas.toDataURL("image/jpeg"); // This will save your image as a
 }
 
 function loadPicture()  {
-  var dataImage = localStorage.getItem('ImageFile');
-  
+  var dataImage = localStorage.getItem('ImageTag');
+  /*
   self.caches.open(staticDevCoffee).then(cache => {
     cache.match("/images/" + myFile);
   })
-  
-  document.getElementById('tableBanner').value = dataImage;;
+  */
+  document.getElementById('tableBanner').src = dataImage;;
 
 }
 //Geoloction-Feature
