@@ -65,7 +65,7 @@ var theStream;
 var theRecorder;
 var recordedChunks = [];
 
-function getStream() {
+function getStream(type) {
   if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
     !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
     alert('User Media API not supported.');
