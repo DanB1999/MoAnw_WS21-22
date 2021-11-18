@@ -145,14 +145,6 @@ function deviceOrientationHandler (eventData) {
 
 //document.addEventListener("DOMContentLoaded", showPicture);
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err));
-  });
-}
 
 //############################Storage Quotas#############################
 
@@ -188,7 +180,47 @@ function getUserMedia(options, successCallback, failureCallback) {
   }
 }
 //###################Kontakte auslesen###############
+function readContacts() {
+  var api = (navigator.contacts || navigator.mozContacts);
+    
+  if (api && !!api.select) { // new Chrome API
+    api.select(['name', 'email'], {multiple: true})
+      .then(function (contacts) {
+        consoleLog('Found ' + contacts.length + ' contacts.');
+        if (contacts.length) {
+          consoleLog('First contact: ' + contacts[0].name + ' (' + contacts[0].email + ')');
+        }
+      })
+      .catch(function (err) {
+        consoleLog('Fetching contacts failed: ' + err.name);
+      });
+      
+  } else if (api && !!api.find) { // old Firefox OS API
+    var criteria = {
+      sortBy: 'familyName',
+      sortOrder: 'ascending'
+    };
 
+    api.find(criteria)
+      .then(function (contacts) {
+        consoleLog('Found ' + contacts.length + ' contacts.');
+        if (contacts.length) {
+          consoleLog('First contact: ' + contacts[0].givenName[0] + ' ' + contacts[0].familyName[0]);
+        }
+      })
+      .catch(function (err) {
+        consoleLog('Fetching contacts failed: ' + err.name);
+      });
+      
+  } else {
+    consoleLog('Contacts API not supported.');
+  }
+}
+
+function consoleLog(data) {
+  var logElement = document.getElementById('log');
+  logElement.innerHTML += data + '\n';
+}
 
 //###################Read File#######################
 function getReadFile(reader, i) {
@@ -238,5 +270,15 @@ async function writeFile() {
   await writer.close()
 }
 */
+
+//###########Service Worker##############
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then(res => console.log("service worker registered"))
+      .catch(err => console.log("service worker not registered", err));
+  });
+}
 
 
