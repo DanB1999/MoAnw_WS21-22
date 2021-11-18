@@ -86,3 +86,6 @@ h1 {
   display: block;
   padding: 15px;
 }
+#photo {
+  display: none;
+}
