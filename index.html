@@ -34,7 +34,7 @@
         </ul>
       </nav>
       <div hidden id="Camera" class="container-fluid">
-        <div class="row">
+        <div class="row pt-3 border">
             <div class="col-6">
               <p><video autoplay style="height: 180px; width: 240px;"></video></p>
               <p><button onclick="getStream('video')">Grab video</button></p>
@@ -45,8 +45,8 @@
               <input id="loadButton" type="button" onclick=loadPicture() name="button" value="Load Picture"/>
             </div>
         </div>
-        <div class="row">
-          <div class="col-5 border fa fa-bullseye"></i>">
+        <div class="row pt-3 border fa-bullseye">
+          <div class="col-5"></i>">
             <audio controls autoplay style="height:180px; width: 240px;"></audio>
             <p><button type="button" onclick="getStream('audio')">Grab audio</button></p>
           </div>
