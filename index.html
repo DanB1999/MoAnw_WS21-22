@@ -33,7 +33,11 @@
           <li>Fin</li>
         </ul>
       </nav>
+      <div class="container">
+      <div class="row">
       <p><button onclick="getStream('video')">Grab video</button></p>
+      <p><img id="imageTag" width="240" height="180"></p>
+      </div>
       <p><video autoplay style="height: 180px; width: 240px;"></video></p>
       <p><button type="button" onclick="getStream('audio')">Grab audio</button></p>
       <audio controls autoplay style="height:180px; width: 240px;"></audio>
@@ -43,7 +47,7 @@
       <input type="button" onclick="downloadImg()" value="Download Photo">
       <img src="" id="tableBanner" width="240" height="180"/>
       <button id="askButton">Ask for location</button>
-      
+      </div>
       <div id="target"></div>
       
       <table>
