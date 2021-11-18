@@ -24,14 +24,29 @@
   </head>
   <body>
     <main>
-      <nav>
-        <h1>MoAnw Fra Uas</h1>
-        <ul>
-          <li><button onclick="show('Camera')">Camera</li>
-          <li><button onclick="show('Location')">Location</li>
-          <li><button onclick="show('Files')">Files</li>
-          <li>Fin</li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Demo App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Camera')">Camera</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Location')">Location</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Files')">Files</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
       <div hidden id="Camera" class="container-fluid">
         <div class="row mt-3 border">
