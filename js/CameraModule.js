@@ -139,6 +139,7 @@ if ('geolocation' in navigator) {
     watchId = navigator.geolocation.watchPosition(appendLocation);
   });
 } else {
+    target.innerText = 'Geolocation API not supported.';
 }
 //########################Device Position##############
 if ('DeviceOrientationEvent' in window) {
