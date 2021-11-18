@@ -52,11 +52,11 @@
       <div hidden id="Camera" class="container-fluid">
         <div class="row mt-3 border">
             <div class="col-6 mt-5">
-              <p><video autoplay onloadstart="getStream('video')" style="height: 75%; width: 100%;"></video></p>
-              <p><button ="">Grab video</button></p>
+              <p><video autoplay style="height: 75%; width: 100%;"></video></p>
+              <p><button onclick="getStream('video')">Grab video</button></p>
             </div>
             <div class="col-6 mt-5">
-              <p><img id="imageTag" width="240" height="180"></p>
+              <p><img id="imageTag" width="100%" height="75%"></p>
               <p><button onclick="takePhoto()">Take Photo!</button></p>
             </div>
         </div>
