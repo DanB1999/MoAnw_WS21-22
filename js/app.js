@@ -101,8 +101,8 @@ function downloadImg()  {
   a.click();
   }
   */
-//Geoloction-Feature
-var target = document.getElementById('target');
+//######################Geoloction-Feature#############
+var target = document.getElementById('target1');
 var watchId;
 
 function appendLocation(location, verb) {
@@ -121,7 +121,7 @@ if ('geolocation' in navigator) {
   });
 } else {
 }
-//Device Position
+//########################Device Position##############
 if ('DeviceOrientationEvent' in window) {
   window.addEventListener('deviceorientation', deviceOrientationHandler, false);
 } else {
@@ -187,6 +187,9 @@ function getUserMedia(options, successCallback, failureCallback) {
     return api.bind(navigator)(options, successCallback, failureCallback);
   }
 }
+//###################Kontakte auslesen###############
+
+
 //###################Read File#######################
 function getReadFile(reader, i) {
   return function () {
