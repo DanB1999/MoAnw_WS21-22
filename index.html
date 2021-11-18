@@ -54,12 +54,12 @@
             <div class="col-12 mt-5">
               <p><video class="border" autoplay style="height: 75%; width: 100%;"></video></p>
               <p><button onclick="getStream('video')">Grab video</button></p>
+              <p><button onclick="takePhoto()">Take Photo!</button></p>
             </div>
         </div>
-        <div class="row mt-3 border">
+        <div hidden id="TakenPhoto" class="row mt-3 border">
             <div class="col-12 mt-5">
               <p><img class="border" id="imageTag" style="height: 75%; width: 100%;"></p>
-              <p><button onclick="takePhoto()">Take Photo!</button></p>
             </div>
         </div>
         <div class="row mt-3 border">
