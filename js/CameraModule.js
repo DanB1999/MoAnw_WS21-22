@@ -95,13 +95,13 @@ function takePhoto() {
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob, {autorevoke : false });
       document.getElementById("TakenPhoto").hidden = false;
-      
+
       var reader = new FileReader();
       reader.readAsDataURL(blob);
       reader.onloadend = function() {
         var base64data = reader.result;
         console.log(base64data);
-        localStorage.setItem("ImageTag",base64data);
+        localStorage.setItem(Date.now(),base64data);
 
       }
     })
