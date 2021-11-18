@@ -18,6 +18,10 @@ const showCoffees = () => {
   container.innerHTML = output;
 };
 */
+function show(value) {
+  console.log("works" + value);
+}
+
 function getUserMedia(options, successCallback, failureCallback) {
   var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia || navigator.msGetUserMedia;
