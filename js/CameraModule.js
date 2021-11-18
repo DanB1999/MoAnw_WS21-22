@@ -121,14 +121,14 @@ function downloadImg()  {
   }
   */
 //######################Geoloction-Feature#############
-var target = document.getElementById('target1');
+var target1 = document.getElementById('target1');
 var watchId;
 
 function appendLocation(location, verb) {
   verb = verb || 'updated';
   var newLocation = document.createElement('p');
   newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
-  target.appendChild(newLocation);
+  target1.appendChild(newLocation);
 }
 
 if ('geolocation' in navigator) {
