@@ -21,6 +21,18 @@ const showCoffees = () => {
 function show(value) {
   if(value="Camera")  {
     document.getElementById(value).hidden = false;
+    document.getElementById("Location").hidden = true;
+    document.getElementById("Files").hidden = true;
+  }
+  else if(value="Location") {
+    document.getElementById(value).hidden = false;
+    document.getElementById("Camera").hidden = true;
+    document.getElementById("Files").hidden = true;
+  }
+  else if(value="Files")  {
+    document.getElementById(value).hidden = false;
+    document.getElementById("Camera").hidden = true;
+    document.getElementById("Location").hidden = true;
   }
   console.log("works" + value);
 }

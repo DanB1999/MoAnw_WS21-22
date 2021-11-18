@@ -52,46 +52,50 @@
         <input type="button" onclick="downloadImg()" value="Download Photo">
         <img src="" id="tableBanner" width="240" height="180"/>
       </div>
-        
-      <button id="askButton">Ask for location</button>
+      <div hidden id="Location">
+        <button id="askButton">Ask for location</button>
         <div class="target1"></div>
         <table>
-        <tr>
-          <td>Tilt Left/Right [gamma]</td>
-          <td id="doTiltLR"></td>
-        </tr>
-        <tr>
-          <td>Tilt Front/Back [beta]</td>
-          <td id="doTiltFB"></td>
-        </tr>
-        <tr>
-          <td>Direction [alpha]</td>
-          <td id="doDirection"></td>
-        </tr>
-      </table>
-      <p>Estimated storage usage is <b id="usage">unknown</b> bytes.</p>
-      <p>Estimated storage quota is <b id="quota">unknown</b> bytes.</p>
-      <p>Estimated usage is <b id="percent">unknown</b>%.</p>
-      <p>Persistent storage status is <b id="persisted">unknown</b>.</p>
-      <p><button onclick="requestPersistence()">Request persistent storage</button></p>
-      <h1>Kontakte</h1>
-      <p>
-        <button onclick="readContacts()">Read Contacts</button>
-      </p>
-      
-      <pre id="log"></pre>
-      <h1>Read File API</h1>
-      <div class="columns">
-        <div class="column">
-          <button class="btn-file">
-            Choose some files to read<br>(File API) <input type="file" onchange="readFiles(this.files)" multiple>
-          </button>
-          
-          <p>Number of selected files: <b id="count">N/A</b></p>
-        </div>
-        <div id="target"></div>
+          <tr>
+            <td>Tilt Left/Right [gamma]</td>
+            <td id="doTiltLR"></td>
+          </tr>
+          <tr>
+            <td>Tilt Front/Back [beta]</td>
+            <td id="doTiltFB"></td>
+          </tr>
+          <tr>
+            <td>Direction [alpha]</td>
+            <td id="doDirection"></td>
+          </tr>
+        </table>
+      </div> 
+      <div id="Files">
+        <p>Estimated storage usage is <b id="usage">unknown</b> bytes.</p>
+        <p>Estimated storage quota is <b id="quota">unknown</b> bytes.</p>
+        <p>Estimated usage is <b id="percent">unknown</b>%.</p>
+        <p>Persistent storage status is <b id="persisted">unknown</b>.</p>
+        <p><button onclick="requestPersistence()">Request persistent storage</button></p>
+        <h1>Kontakte</h1>
+        <p>
+          <button onclick="readContacts()">Read Contacts</button>
+        </p>
         
+        <pre id="log"></pre>
+        <h1>Read File API</h1>
+        <div class="columns">
+          <div class="column">
+            <button class="btn-file">
+              Choose some files to read<br>(File API) <input type="file" onchange="readFiles(this.files)" multiple>
+            </button>
+            
+            <p>Number of selected files: <b id="count">N/A</b></p>
+          </div>
+          <div id="target"></div>
+          
+        </div>
       </div>
+      
       <div id="imgLogo">
         <img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" id="imgLogo">
       </div>
