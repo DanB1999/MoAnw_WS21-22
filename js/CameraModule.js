@@ -109,6 +109,11 @@ function takePhoto() {
 }
 
 function loadPicture()  {
+    for(i = 0; i<localStorage.length; i++)  {
+        var base64 = localStorage.getItem(localStorage.key(i));
+        document.getElementById('tableBanner').src = base64;;
+    }
+    
   var base64 = localStorage.getItem('ImageTag');
   document.getElementById('tableBanner').src = base64;;
 
