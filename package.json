@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/DanB1999/MoAnw_WS21-22#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
   }
 }
