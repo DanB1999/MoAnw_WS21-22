@@ -1,0 +1,22 @@
+{
+  "name": "dev-coffee-new",
+  "version": "1.0.0",
+  "description": "for development reasons",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanB1999/MoAnw_WS21-22.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanB1999/MoAnw_WS21-22/issues"
+  },
+  "homepage": "https://github.com/DanB1999/MoAnw_WS21-22#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
