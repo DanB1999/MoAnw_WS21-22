@@ -113,10 +113,6 @@ function loadPicture()  {
         var base64 = localStorage.getItem(localStorage.key(i));
         document.getElementById('tableBanner').src = base64;;
     }
-    
-  var base64 = localStorage.getItem('ImageTag');
-  document.getElementById('tableBanner').src = base64;;
-
 }
 /*
 function downloadImg()  {
