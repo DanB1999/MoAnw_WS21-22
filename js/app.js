@@ -19,6 +19,9 @@ const showCoffees = () => {
 };
 */
 function show(value) {
+  if(value="Camera")  {
+    document.getElementById(value).hidden = false;
+  }
   console.log("works" + value);
 }
 

@@ -27,13 +27,13 @@
       <nav>
         <h1>MoAnw Fra Uas</h1>
         <ul>
-          <li><button class="fa fa-camera-retro" aria-hidden="true"  onclick="show(Camera)"></li>
-          <li><button value="Home" onclick="show(this.value)"></li>
-          <li><button value="Home" onclick="show(this.value)"></li>
+          <li><button onclick="show('Camera')">Camera</li>
+          <li><button onclick="show('Location')">Location</li>
+          <li><button onclick="show('Files')">Files</li>
           <li>Fin</li>
         </ul>
       </nav>
-      <div visibility:hidden class="div class="container-fluid>
+      <div id="Camera" class="div class="container-fluid>
         <div class="row">
             <div class="col-6">
               <p><video autoplay style="height: 180px; width: 240px;"></video></p>
