@@ -310,7 +310,6 @@ async function writeFile() {
 */
 
 //###########Local Notification#################
-
 var $status = document.getElementById('status');
 
 if ('Notification' in window) {
@@ -355,7 +354,6 @@ function persistentNotification() {
     alert('Notification API error: ' + err);
   }
 }
-
 //############Permissions##################
 if ('permissions' in navigator) {
   var logTarget = document.getElementById('logTarget');
