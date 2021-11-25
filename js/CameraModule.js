@@ -356,7 +356,6 @@ function persistentNotification() {
   }
 }
 
-}
 //############Permissions##################
 if ('permissions' in navigator) {
   var logTarget = document.getElementById('logTarget');
@@ -432,4 +431,5 @@ if ("serviceWorker" in navigator) {
       .then(res => console.log("service worker registered"))
       .catch(err => console.log("service worker not registered", err));
   });
+}
 }
