@@ -121,7 +121,13 @@
           <div id="target"></div>
           
         </div>
-      </div>    
+      </div>
+    <div class="container">
+      <p>Current permission status is <b id="status">unavailable</b>.</p>
+      <p><button onclick="requestPermission()">Request permission</button></p>
+      <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
+      <p><button onclick="persistentNotification()">Persistent notification</button></p>
+    </div>    
     </main>
     <script src="js/CameraModule.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
