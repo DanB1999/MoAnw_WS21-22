@@ -42,7 +42,7 @@ function show(value) {
     document.getElementById("Camera").hidden = true;
     document.getElementById("Location").hidden = true;
     document.getElementById("Files").hidden = true;
-
+  }
   console.log("works" + value);
 }
 
@@ -430,4 +430,4 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log("service worker not registered", err));
   });
 }
-}
+
