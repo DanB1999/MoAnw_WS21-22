@@ -37,7 +37,7 @@ function newRow()   {
     "<td id='tdCat " + i + "'><input type='text' id='cat' onchange='embeddedElement('cat')' value=''></td>"+
     "<td id='tdAmount " + i + "'><input type='number' id='amount' onchange='embeddedElement('amount')' value=''></td>"+
     "<td id='tdBalance" + i + "'></td>"
-
+    console.log(text);
     const tr = document.create('tr');
     tr.id = "tr"+i;
     tr.innerHTML=text;
