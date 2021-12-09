@@ -1,5 +1,5 @@
 function embeddedElement(id)  {
-    var x = document.getElementById(id).parentElement.nodeName
+    var x = document.getElementById(id).parentElement.innerHTML
     x = document.getElementById(id).value;
 }
 

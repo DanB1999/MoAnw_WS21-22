@@ -65,7 +65,7 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row"><input type="desc" onchange="embeddedElement('desc')">></th>
+              <th scope="row" id=""><input type="desc" onchange="embeddedElement('desc')"></th>
               <td><input type="date" id="date" onchange="embeddedElement('date')"></td>
               <td><input type="text" id="cat" onchange="embeddedElement('cat')"></td>
               <td><input type="number" id="amount" onchange="embeddedElement('amount')"></td>
@@ -73,11 +73,12 @@
             </tr> 
           </tbody>
         </table>
+        
       </div>
-      
+    
       
 
-      <div class="container"></div>
+      
     </main>
     <script>
     document.getElementById("text").addEventListener("change", embeddedElement());
