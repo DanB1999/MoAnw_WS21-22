@@ -36,10 +36,10 @@ function embeddedElement(id)  {
     
 }
 function newRow()   {
-    var text = "<td id='tdDesc" + i + "'><input id='desc' type='desc' onchange='embeddedElement('desc')' value=''></th>"+
-    "<td id='tdDate" + i + "'><input type='date' id='date' onchange='embeddedElement('date')' value=''></td>"+
-    "<td id='tdCat" + i + "'><input type='text' id='cat' onchange='embeddedElement('cat')' value=''></td>"+
-    "<td id='tdAmount" + i + "'><input type='number' id='amount' onchange='embeddedElement('amount')' value=''></td>"+
+    var text = "<td id='tdDesc" + i + "'><input id='desc' type='desc' onchange='embeddedElement(\'desc\')' value=''></th>"+
+    "<td id='tdDate" + i + "'><input type='date' id='date' onchange='embeddedElement(\'date\')' value=''></td>"+
+    "<td id='tdCat" + i + "'><input type='text' id='cat' onchange='embeddedElement(\'cat\')' value=''></td>"+
+    "<td id='tdAmount" + i + "'><input type='number' id='amount' onchange='embeddedElement(\'amount\')' value=''></td>"+
     "<td id='tdBalance" + i + "'></td>";
     console.log(text);
     const tr = document.createElement('tr');
