@@ -2,7 +2,7 @@ function embeddedElement(id)  {
     var value = document.getElementById(id).value;
     
     var x = document.getElementById(id).parentElement.id;
-    console.log(value);
+    console.log(x);
     document.getElementById(x).innerHTML = value;
 }
 
