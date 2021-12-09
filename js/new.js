@@ -1,5 +1,6 @@
 function embeddedElement(id)  {
     var value = document.getElementById(id).value;
+    console.log(value);
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
 }
