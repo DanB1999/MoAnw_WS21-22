@@ -38,7 +38,7 @@ function newRow()   {
     "<td id='tdAmount " + i + "'><input type='number' id='amount' onchange='embeddedElement('amount')' value=''></td>"+
     "<td id='tdBalance" + i + "'></td>";
     console.log(text);
-    const tr = document.create('tr');
+    const tr = document.createElement('tr');
     tr.id = "tr"+i;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
