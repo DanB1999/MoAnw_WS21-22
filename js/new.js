@@ -20,7 +20,6 @@ function embeddedElement(id)  {
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
     if(typeof value === "number") balance -= value;
-    counter++;
     if(counter == 0) desc = value;
     else if(counter == 1) date = value;
     else if(counter == 2) cat = value;
@@ -28,9 +27,10 @@ function embeddedElement(id)  {
     else if(counter == 4)     {
         document.getElementById("tdBalance").innerHTML = balance
         costObjects.push(new costObject(desc, date, cat, amount, balance))
-        counter=0;
+        counter=-1;
         newRow();
     }
+    counter++;
     console.log(counter);
 }
 function newRow()   {
