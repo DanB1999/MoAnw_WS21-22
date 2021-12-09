@@ -335,7 +335,7 @@ function nonPersistentNotification() {
   
   try {
     //var notification = new Notification("Hi there - non-persistent!");
-    serviceWorkerRegistration.showNotification();
+    serviceWorkerRegistration.showNotification("Hi there ");
   } catch (err) {
     alert('Notification API error: ' + err);
   }
