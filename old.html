@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Daniel Bilic">
+    <meta name="date" content="2021-10-29">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-384x384.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-512x512.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938">
+    <meta name="theme-color" content="#db4938">
+    <title>Dev'Coffee PWA</title>
+  </head>
+  <body>
+    <main>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Demo App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Camera')">Camera</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Location')">Location</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Files')">Files</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="show('Settings')">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <div hidden id="Camera" class="container-fluid">
+        <div class="row mt-3 border">
+            <div class="col-12 mt-5">
+              <p><video class="border" autoplay style="height: 75%; width: 100%;"></video></p>
+              <p><button onclick="getStream('video')">Grab video</button></p>
+              <p><button onclick="takePhoto()">Take Photo!</button></p>
+            </div>
+        </div>
+        <div hidden id="TakenPhoto" class="row mt-3 border">
+            <div class="col-12 mt-5">
+              <p><img class="border" id="imageTag" style="height: 75%; width: 100%;"></p>
+            </div>
+        </div>
+        <div class="row mt-3 border">
+          <div class="col-6 mt-3">
+            <img src="" id="tableBanner" width="240" height="180"/>
+            <div class="col-6 mt-3">
+              <input id="loadButton" type="button" onclick=loadPicture() name="button" value="Load Picture"/>
+              <input type="button" onclick="downloadImg()" value="Download Photo">
+            </div>
+          </div>
+          <div class="col-6 mt-3">
+            <audio controls autoplay style="height:180px; width: 240px;"></audio>
+            <p><button type="button" onclick="getStream('audio')">Grab audio</button></p>
+          </div>
+        </div>
+      </div>
+      <div hidden id="Location" class="container-fluid">
+        <button id="askButton">Ask for location</button>
+        <div id="target1"></div>
+        <table>
+          <tr>
+            <td>Tilt Left/Right [gamma]</td>
+            <td id="doTiltLR"></td>
+          </tr>
+          <tr>
+            <td>Tilt Front/Back [beta]</td>
+            <td id="doTiltFB"></td>
+          </tr>
+          <tr>
+            <td>Direction [alpha]</td>
+            <td id="doDirection"></td>
+          </tr>
+        </table>
+        <div id="imgLogo">
+          <img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" id="imgLogo">
+        </div>
+      </div> 
+      <div hidden id="Files" class="container-fluid">
+        <p>Estimated storage usage is <b id="usage">unknown</b> bytes.</p>
+        <p>Estimated storage quota is <b id="quota">unknown</b> bytes.</p>
+        <p>Estimated usage is <b id="percent">unknown</b>%.</p>
+        <p>Persistent storage status is <b id="persisted">unknown</b>.</p>
+        <p><button onclick="requestPersistence()">Request persistent storage</button></p>
+        <h1>Kontakte</h1>
+        <p>
+          <button onclick="readContacts()">Read Contacts</button>
+        </p>
+        
+        <pre id="log"></pre>
+        <h1>Read File API</h1>
+        <div class="columns">
+          <div class="column">
+            <button class="btn-file">
+              Choose some files to read<br>(File API) <input type="file" onchange="readFiles(this.files)" multiple>
+            </button>
+            
+            <p>Number of selected files: <b id="count">N/A</b></p>
+          </div>
+          <div id="target"></div>
+          
+        </div>
+      </div>
+    <div class="container">
+      <p>Current permission status is <b id="status">unavailable</b>.</p>
+      <p><button onclick="requestPermission()">Request permission</button></p>
+      <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
+      <p><button onclick="persistentNotification()">Persistent notification</button></p>
+    </div> 
+    <div hidden id="Settings" class="container">
+      <div>
+        <p>
+          <b><a href="/geolocation.html">Geolocation</a></b> permission status is <b id="geolocation-status">unknown</b>.
+          
+          <button onclick="requestGeolocation()">Request</button>
+        </p>
+        <p>
+          <b><a href="/local-notifications.html">Notifications</a></b> permission status is <b id="notifications-status">unknown</b>.
+          
+          <button onclick="requestNotifications()">Request</button>
+        </p>
+        <p>
+          <b><a href="/push-notifications.html">Push</a></b> permission status is <b id="push-status">unknown</b>.
+          
+          <button onclick="requestPush()">Request</button>
+        </p>
+        <p>
+          <b>Midi</b> permission status is <b id="midi-status">unknown</b>.
+          
+          <button onclick="requestMidi()">Request</button>
+        </p>
+        <p>
+          <b><a href="/camera-microphone.html">Camera</a></b> permission status is <b id="camera-status">unknown</b>.
+          
+          <button onclick="requestCamera()">Request</button>
+        </p>
+        <p>
+          <b><a href="/camera-microphone.html">Microphone</a></b> permission status is <b id="microphone-status">unknown</b>.
+          
+          <button onclick="requestMicrophone()">Request</button>
+        </p>
+        <p>
+          <b><a href="/background-sync.html">Background Sync</a></b> permission status is <b id="background-sync-status">unknown</b>.
+        </p>
+        <p>
+          <b><a href="/ambient-light.html">Ambient Light Sensor</a></b> permission status is <b id="ambient-light-sensor-status">unknown</b>.
+        </p>
+        <p>
+          <b><a href="/device-motion.html">Accelerometer</a></b> permission status is <b id="accelerometer-status">unknown</b>.
+        </p>
+        <p>
+          <b><a href="/device-motion.html">Gyroscope</a></b> permission status is <b id="gyroscope-status">unknown</b>.
+        </p>
+        <p>
+          <b><a href="/device-motion.html">Magnetometer</a></b> permission status is <b id="magnetometer-status">unknown</b>.
+        </p>
+      </div>
+    </div>   
+    </main>
+    <script src="js/CameraModule.js"></script>
+    <script src="js/LocalNotifications.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+</html>
