@@ -1,7 +1,7 @@
 function embeddedElement(id)  {
-    console.log(document.getElementById(id).parentElement.innerHTML)
-    //var x = document.getElementById(id).parentElement.innerHTML
-    //x = document.getElementById(id).value;
+    var value = document.getElementById(id).value;
+    var x = document.getElementById(id).parentElement.id;
+    document.getElementById(x).innerHTML = value;
 }
 
 
