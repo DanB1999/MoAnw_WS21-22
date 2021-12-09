@@ -47,7 +47,7 @@ function newRow()   {
 
 
 
-document.addEventListener("")
+//document.addEventListener("")
 
 function saveObject()   {
 
