@@ -28,7 +28,7 @@ function embeddedElement(id)  {
         document.getElementById("tdBalance").innerHTML = balance
         costObjects.push(new costObject(desc, date, cat, amount, balance))
         counter=0;
-
+        newRow();
     }
 }
 function newRow()   {
