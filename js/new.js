@@ -27,7 +27,7 @@ function embeddedElement(id)  {
     else if(counter == 3) {
         amount = value;
         balance -= value;
-        document.getElementById("tdBalance").innerHTML = balance
+        document.getElementById("tdBalance"+i).innerHTML = balance
         costObjects.push(new costObject(desc, date, cat, amount, balance))
         counter=-1;
         newRow();
@@ -49,7 +49,21 @@ function newRow()   {
     i++;
 }
 
-
+function showObjects(elem)    { 
+    var text = "<td id='tdDesc" + i + "'>" + elem.desc + "</th>"+
+    "<td id='tdDate" + i + "'>" + elem.date + "</td>"+
+    "<td id='tdCat" + i + "'>" + elem.cat + "</td>"+
+    "<td id='tdAmount" + i + "'>" + elem.amount + "</td>"+
+    "<td id='tdBalance" + i + "'>" + elem.balance + "</td>";
+    const tr = document.createElement('tr');
+    tr.id = "tr"+i;
+    tr.innerHTML=text;
+    document.getElementById('tbody').appendChild(tr);
+    i++;
+}
+function saveObject()   {
+    
+}
 
 //document.addEventListener("")
 
