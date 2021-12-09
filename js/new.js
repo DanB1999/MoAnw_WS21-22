@@ -30,6 +30,7 @@ function embeddedElement(id)  {
         counter=0;
         newRow();
     }
+    console.log(counter);
 }
 function newRow()   {
     var text = "<th id='tdDesc'><input id='desc' type='desc' onchange='embeddedElement('desc')' value=''></th>"+
