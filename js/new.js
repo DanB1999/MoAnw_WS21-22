@@ -19,7 +19,6 @@ function embeddedElement(id)  {
     var value = document.getElementById(id).value;
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
-    if(typeof value === "number") balance -= value;
     console.log(value);
     console.log(counter);
     if(counter == 0) desc = value;
@@ -27,6 +26,7 @@ function embeddedElement(id)  {
     else if(counter == 2) cat = value;
     else if(counter == 3) {
         amount = value;
+        balance -= value;
         document.getElementById("tdBalance").innerHTML = balance
         costObjects.push(new costObject(desc, date, cat, amount, balance))
         counter=-1;
