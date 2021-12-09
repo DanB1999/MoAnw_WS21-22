@@ -1,4 +1,6 @@
-
+function embeddedElement(id)  {
+    document.getElementById(id).parentElement.innerHTML =  document.getElementById(id).value;
+}
 
 
 
