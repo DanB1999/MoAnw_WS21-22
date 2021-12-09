@@ -21,6 +21,7 @@ function embeddedElement(id)  {
     document.getElementById(x).innerHTML = value;
     if(typeof value === "number") balance -= value;
     console.log(value);
+    console.log(counter);
     if(counter == 0) desc = value;
     else if(counter == 1) date = value;
     else if(counter == 2) cat = value;
@@ -32,7 +33,7 @@ function embeddedElement(id)  {
         newRow();
     }
     counter++;
-    console.log(counter);
+    
 }
 function newRow()   {
     var text = "<th id='tdDesc'><input id='desc' type='desc' onchange='embeddedElement('desc')' value=''></th>"+
