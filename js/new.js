@@ -8,7 +8,7 @@ class costObject {
    }
 }
 
-const attributes = new Array;
+var attributes = new Array;
 var balance = 0;
 var counter = 0;
 var i = 1;
@@ -46,7 +46,7 @@ function newRow()   {
     document.getElementById('tbody').appendChild(tr);
 }
 
-function showObjects(elem)    { 
+function showObject(elem)    { 
     var text = "<td id='tdDesc" + i + "'>" + elem.desc + "</th>"+
     "<td id='tdDate" + i + "'>" + elem.date + "</td>"+
     "<td id='tdCat" + i + "'>" + elem.cat + "</td>"+
@@ -63,6 +63,14 @@ function saveObject(Element)   {
     localStorage.setItem("Kostenelement "+ i, Element);
     console.log(Element);
     i++;
+}
+
+function getObjects() 
+    var i;       {
+    for(i = 0; i < localStorage.length; i++)    {
+        var elem = localStorage.getItem("Kostenelement " + i);
+        console.log(elem);
+    }
 }
 
 //document.addEventListener("")
