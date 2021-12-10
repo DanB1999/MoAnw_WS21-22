@@ -27,8 +27,8 @@ function embeddedElement(id)  {
         saveObject(new costObject(attributes[0], attributes[1], attributes[2], amount, balance));
         attributes = [];
         counter=-1;
-        newRow();
         num++;
+        newRow();
     }
     counter++;
     
@@ -64,7 +64,7 @@ function saveObject(Element)   {
 
 function getObjects()   {
     var i;       
-    for(i = 1; i < localStorage.length; i++)    {
+    for(i = 1; i < localStorage.length+1; i++)    {
         var elem = localStorage.getItem("Kostenelement " + i);
         showObject(JSON.parse(elem));
     }
