@@ -60,7 +60,7 @@ function showObject(elem)    {
 }
 function saveObject(Element)   {
     var i = 0;
-    localStorage.setItem("Kostenelement "+ i, Element);
+    localStorage.setItem("Kostenelement "+ i, JSON.stringify(Element));
     //console.log(Element);
     i++;
 }
@@ -69,7 +69,7 @@ function getObjects()   {
     var i;       
     for(i = 0; i < localStorage.length; i++)    {
         var elem = localStorage.getItem("Kostenelement " + i);
-        console.log(elem);
+        console.log(JSON.parse(elem));
     }
 }
 
