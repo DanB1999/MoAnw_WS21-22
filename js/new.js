@@ -28,6 +28,7 @@ function embeddedElement(id)  {
         attributes = [];
         counter=-1;
         newRow();
+        num++;
     }
     counter++;
     
@@ -53,14 +54,13 @@ function showObject(elem)    {
     "<td id='tdAmount" + num + "'>" + elem.amount + "</td>"+
     "<td id='tdBalance" + num + "'>" + elem.balance + "</td>";
     const tr = document.createElement('tr');
-    tr.id = "tr"+i;
+    tr.id = "tr" + num;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
     num++;
 }
 function saveObject(Element)   {
     localStorage.setItem("Kostenelement "+ num, JSON.stringify(Element));
-    num++
 }
 
 function getObjects()   {
