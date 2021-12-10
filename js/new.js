@@ -11,7 +11,7 @@ class costObject {
 var attributes = new Array;
 var balance = 0;
 var counter = 0;
-var i = 1;
+var num = 1;
 
 function embeddedElement(id)  {
     var desc, date, cat, amount;
@@ -33,33 +33,34 @@ function embeddedElement(id)  {
     
 }
 function newRow()   {
-    i++;
-    var text = "<td id='tdDesc" + i + "'><input id='desc' type='desc' onchange='embeddedElement(\"desc\")' value=''></th>"+
-    "<td id='tdDate" + i + "'><input type='date' id='date' onchange='embeddedElement(\"date\")' value=''></td>"+
-    "<td id='tdCat" + i + "'><input type='text' id='cat' onchange='embeddedElement(\"cat\")' value=''></td>"+
-    "<td id='tdAmount" + i + "'><input type='number' id='amount' onchange='embeddedElement(\"amount\")' value=''></td>"+
-    "<td id='tdBalance" + i + "'></td>";
+    var text = "<td id='tdDesc" + num + "'><input id='desc' type='desc' onchange='embeddedElement(\"desc\")' value=''></th>"+
+    "<td id='tdDate" + num + "'><input type='date' id='date' onchange='embeddedElement(\"date\")' value=''></td>"+
+    "<td id='tdCat" + num + "'><input type='text' id='cat' onchange='embeddedElement(\"cat\")' value=''></td>"+
+    "<td id='tdAmount" + num + "'><input type='number' id='amount' onchange='embeddedElement(\"amount\")' value=''></td>"+
+    "<td id='tdBalance" + num + "'></td>";
     const tr = document.createElement('tr');
     tr.id = "tr"+i;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
+    num++
 }
 
 function showObject(elem)    { 
-    var text = "<td id='tdDesc" + i + "'>" + elem.desc + "</th>"+
-    "<td id='tdDate" + i + "'>" + elem.date + "</td>"+
-    "<td id='tdCat" + i + "'>" + elem.cat + "</td>"+
-    "<td id='tdAmount" + i + "'>" + elem.amount + "</td>"+
-    "<td id='tdBalance" + i + "'>" + elem.balance + "</td>";
+    console.log(elem);
+    var text = "<td id='tdDesc" + num + "'>" + elem.desc + "</th>"+
+    "<td id='tdDate" + num + "'>" + elem.date + "</td>"+
+    "<td id='tdCat" + num + "'>" + elem.cat + "</td>"+
+    "<td id='tdAmount" + num + "'>" + elem.amount + "</td>"+
+    "<td id='tdBalance" + num + "'>" + elem.balance + "</td>";
     const tr = document.createElement('tr');
     tr.id = "tr"+i;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
-    i++;
+    num++;
 }
 function saveObject(Element)   {
-    localStorage.setItem("Kostenelement "+ i, JSON.stringify(Element));
-    i++
+    localStorage.setItem("Kostenelement "+ num, JSON.stringify(Element));
+    num++
 }
 
 function getObjects()   {
