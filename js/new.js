@@ -13,6 +13,7 @@ const attributes = new Array;
 var balance = 0;
 var counter = 0;
 var i = 1;
+newRow();
 
 function embeddedElement(id)  {
     var desc, date, cat, amount;
@@ -36,6 +37,7 @@ function embeddedElement(id)  {
     
 }
 function newRow()   {
+    i++;
     var text = "<td id='tdDesc" + i + "'><input id='desc' type='desc' onchange='embeddedElement(\"desc\")' value=''></th>"+
     "<td id='tdDate" + i + "'><input type='date' id='date' onchange='embeddedElement(\"date\")' value=''></td>"+
     "<td id='tdCat" + i + "'><input type='text' id='cat' onchange='embeddedElement(\"cat\")' value=''></td>"+
@@ -46,7 +48,6 @@ function newRow()   {
     tr.id = "tr"+i;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
-    i++;
 }
 
 function showObjects(elem)    { 
