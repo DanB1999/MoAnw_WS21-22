@@ -69,7 +69,6 @@ function getObjects()   {
         showObject(JSON.parse(elem));
     }
     newRow();
-    num++
 }
 
 //document.addEventListener("")
