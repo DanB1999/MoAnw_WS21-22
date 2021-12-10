@@ -8,7 +8,6 @@ class costObject {
    }
 }
 
-//var attributes = new Array;
 const attributes = new Map();
 var balance = 0;
 var counter = 0;
