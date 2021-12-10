@@ -20,7 +20,6 @@ function embeddedElement(id)  {
     var value = elem.value;
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
-    Has
     attributes.set(id, value);   
     if(attributes.size == 4) {
         amount = attributes.get("amount");
