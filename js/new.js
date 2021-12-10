@@ -43,7 +43,7 @@ function newRow()   {
     tr.id = "tr"+ num;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
-    document.getElementById("tdDesc" + num).focus;
+    console.log(document.getElementById("tdDesc" + num));
 }
 
 function showObject(elem)    { 
