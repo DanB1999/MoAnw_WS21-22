@@ -27,7 +27,7 @@ function embeddedElement(id)  {
         balance -= amount;
         document.getElementById("tdBalance" + num).innerHTML = balance;
         saveObject(new costObject(attributes.get("desc"), attributes.get("date"), attributes.get("cat"), amount, balance));
-        attributes = [];
+        attributes.clear();
         counter=-1;
         num++;
         newRow();
