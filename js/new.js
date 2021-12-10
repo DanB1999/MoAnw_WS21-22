@@ -34,7 +34,7 @@ function embeddedElement(id)  {
     
 }
 function newRow()   {
-    var text = "<td id='tdDesc" + num + "'><input id='desc' type='desc' onchange='embeddedElement(\"desc\")' value=''></th>"+
+    var text = "<td id='tdDesc" + num + "'><input id='desc' type='desc' onchange='embeddedElement(\"desc\")' value='' autofocus></th>"+
     "<td id='tdDate" + num + "'><input type='date' id='date' onchange='embeddedElement(\"date\")' value=''></td>"+
     "<td id='tdCat" + num + "'><input type='text' id='cat' onchange='embeddedElement(\"cat\")' value=''></td>"+
     "<td id='tdAmount" + num + "'><input type='number' id='amount' onchange='embeddedElement(\"amount\")' value=''></td>"+
