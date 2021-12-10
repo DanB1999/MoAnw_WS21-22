@@ -69,7 +69,7 @@ function getObjects()   {
     var i;       
     for(i = 0; i < localStorage.length; i++)    {
         var elem = localStorage.getItem("Kostenelement " + i);
-        console.log(JSON.parse(elem));
+        showObject(JSON.parse(elem));
     }
 }
 
