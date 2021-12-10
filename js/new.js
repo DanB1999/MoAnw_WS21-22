@@ -61,7 +61,7 @@ function showObject(elem)    {
 function saveObject(Element)   {
     var i = 0;
     localStorage.setItem("Kostenelement "+ i, Element);
-    console.log(Element);
+    //console.log(Element);
     i++;
 }
 
