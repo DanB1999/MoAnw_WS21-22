@@ -23,9 +23,9 @@ function embeddedElement(id)  {
     console.log(value);
     console.log(counter);
     if(counter == 0) desc = value;
-    else if(counter == 1) date = value;
-    else if(counter == 2) cat = value;
-    else if(counter == 3) {
+    if(counter == 1) date = value;
+    if(counter == 2) cat = value;
+    if(counter == 3) {
         amount = value;
         balance -= amount;
         document.getElementById("tdBalance"+i).innerHTML = balance;
