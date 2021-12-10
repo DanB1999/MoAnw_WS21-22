@@ -65,8 +65,11 @@ function saveObject(Element)   {
 function getObjects()   {
     var i;       
     for(i = 1; i < localStorage.length+1; i++)    {
-        var elem = localStorage.getItem("Kostenelement " + i);
-        showObject(JSON.parse(elem));
+        var elem = JSON.parse(localStorage.getItem("Kostenelement " + i));
+        showObject(elem);
+        if(i = localStorage.length) {
+            balance = elem.balance;
+        }
     }
     newRow();
 }
