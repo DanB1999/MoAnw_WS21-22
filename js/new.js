@@ -22,9 +22,15 @@ function embeddedElement(id)  {
     document.getElementById(x).innerHTML = value;
     console.log(value);
     console.log(counter);
-    if(counter == 0) desc = value;
-    if(counter == 1) date = value;
-    if(counter == 2) cat = value;
+    if(counter == 0) {
+        desc = value;
+    }
+    if(counter == 1) {
+        date = value;
+    }
+    if(counter == 2) {
+        cat = value;
+    }
     if(counter == 3) {
         amount = value;
         balance -= amount;
