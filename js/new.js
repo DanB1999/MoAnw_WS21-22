@@ -58,9 +58,8 @@ function showObject(elem)    {
     i++;
 }
 function saveObject(Element)   {
-    var i = 0;
     localStorage.setItem("Kostenelement "+ i, JSON.stringify(Element));
-    i++;
+    i++
 }
 
 function getObjects()   {
