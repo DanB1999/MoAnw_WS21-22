@@ -29,7 +29,8 @@ function embeddedElement(id)  {
         amount = value;
         balance -= amount;
         document.getElementById("tdBalance"+i).innerHTML = balance;
-        costObjects.push(new costObject(desc, date, cat, amount, balance))
+        saveObject(new costObject(desc, date, cat, amount, balance));
+        //costObjects.push(new costObject(desc, date, cat, amount, balance))
         counter=-1;
         newRow();
     }
@@ -43,7 +44,6 @@ function newRow()   {
     "<td id='tdCat" + i + "'><input type='text' id='cat' onchange='embeddedElement(\"cat\")' value=''></td>"+
     "<td id='tdAmount" + i + "'><input type='number' id='amount' onchange='embeddedElement(\"amount\")' value=''></td>"+
     "<td id='tdBalance" + i + "'></td>";
-    console.log(text);
     const tr = document.createElement('tr');
     tr.id = "tr"+i;
     tr.innerHTML=text;
@@ -62,8 +62,10 @@ function showObjects(elem)    {
     document.getElementById('tbody').appendChild(tr);
     i++;
 }
-function saveObject()   {
-
+function saveObject(Element)   {
+    var i = 0;
+    localStorage.setItem("Kostenelement "+ i, Element);
+    i++;
 }
 
 //document.addEventListener("")
