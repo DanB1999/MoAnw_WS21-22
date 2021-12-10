@@ -17,7 +17,6 @@ function embeddedElement(id)  {
     var amount;
     var elem = document.getElementById(id);
     var value = elem.value;
-    elem.focus;
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
     attributes.push(value)   
@@ -43,8 +42,8 @@ function newRow()   {
     const tr = document.createElement('tr');
     tr.id = "tr"+ num;
     tr.innerHTML=text;
+    document.getElementById("desc").focus;
     document.getElementById('tbody').appendChild(tr);
-    console.log(document.getElementById("desc"));
 }
 
 function showObject(elem)    { 
