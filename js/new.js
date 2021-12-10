@@ -12,7 +12,6 @@ var attributes = new Array;
 var balance = 0;
 var counter = 0;
 var i = 1;
-newRow();
 
 function embeddedElement(id)  {
     var desc, date, cat, amount;
@@ -61,7 +60,6 @@ function showObject(elem)    {
 function saveObject(Element)   {
     var i = 0;
     localStorage.setItem("Kostenelement "+ i, JSON.stringify(Element));
-    //console.log(Element);
     i++;
 }
 
@@ -71,6 +69,7 @@ function getObjects()   {
         var elem = localStorage.getItem("Kostenelement " + i);
         showObject(JSON.parse(elem));
     }
+    newRow();
 }
 
 //document.addEventListener("")
