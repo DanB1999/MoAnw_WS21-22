@@ -71,10 +71,6 @@ function saveObject(Element)   {
 
 //document.addEventListener("")
 
-function saveObject()   {
-
-}
-
 
 
 if ("serviceWorker" in navigator) {
