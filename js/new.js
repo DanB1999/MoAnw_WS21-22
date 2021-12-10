@@ -15,11 +15,12 @@ var num = 1;
 
 function embeddedElement(id)  {
     var amount;
-    var value = document.getElementById(id).value;
+    var elem = document.getElementById(id);
+    var value = elem.value;
+    elem.focus;
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
     attributes.push(value)   
-    
     if(counter == 3) {
         amount = value;
         balance -= amount;
