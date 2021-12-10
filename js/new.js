@@ -27,7 +27,7 @@ function embeddedElement(id)  {
     else if(counter == 3) {
         amount = value;
         balance -= amount;
-        document.getElementById("tdBalance"+i).innerHTML = balance
+        document.getElementById("tdBalance"+i).innerHTML = balance;
         costObjects.push(new costObject(desc, date, cat, amount, balance))
         counter=-1;
         newRow();
