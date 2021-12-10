@@ -8,7 +8,6 @@ class costObject {
    }
 }
 
-const costObjects = new Array;
 const attributes = new Array;
 var balance = 0;
 var counter = 0;
@@ -20,24 +19,14 @@ function embeddedElement(id)  {
     var value = document.getElementById(id).value;
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
-    console.log(value);
-    console.log(counter);
-    if(counter == 0) {
-        desc = value;
-        console.log(desc);
-    }
-    if(counter == 1) {
-        date = value;
-    }
-    if(counter == 2) {
-        cat = value;
-    }
+    attributes.push(value)   
+    
     if(counter == 3) {
         amount = value;
         balance -= amount;
         document.getElementById("tdBalance"+i).innerHTML = balance;
-        saveObject(new costObject(desc, date, cat, amount, balance));
-        //costObjects.push(new costObject(desc, date, cat, amount, balance))
+        saveObject(new costObject(attributes[0], attributes[1], attributes[2], amount, balance));
+        attributes = [];
         counter=-1;
         newRow();
     }
