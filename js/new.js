@@ -43,7 +43,6 @@ function newRow()   {
     tr.id = "tr"+ num;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
-    num++
 }
 
 function showObject(elem)    { 
@@ -70,6 +69,7 @@ function getObjects()   {
         showObject(JSON.parse(elem));
     }
     newRow();
+    num++
 }
 
 //document.addEventListener("")
