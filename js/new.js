@@ -43,8 +43,7 @@ function newRow()   {
     tr.id = "tr"+ num;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
-    var input = document.getElementById("desc");
-    input.focus();
+    document.getElementById("desc").focus();
 }
 
 function showObject(elem)    { 
