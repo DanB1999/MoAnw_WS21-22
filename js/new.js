@@ -23,7 +23,7 @@ function embeddedElement(id)  {
     if(counter == 3) {
         amount = value;
         balance -= amount;
-        document.getElementById("tdBalance" + n).innerHTML = balance;
+        document.getElementById("tdBalance" + num).innerHTML = balance;
         saveObject(new costObject(attributes[0], attributes[1], attributes[2], amount, balance));
         attributes = [];
         counter=-1;
