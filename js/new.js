@@ -24,6 +24,7 @@ function embeddedElement(id)  {
     console.log(counter);
     if(counter == 0) {
         desc = value;
+        console.log(desc);
     }
     if(counter == 1) {
         date = value;
