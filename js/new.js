@@ -14,7 +14,7 @@ var counter = 0;
 var num = 1;
 
 function embeddedElement(id)  {
-    var desc, date, cat, amount;
+    var amount;
     var value = document.getElementById(id).value;
     var x = document.getElementById(id).parentElement.id;
     document.getElementById(x).innerHTML = value;
@@ -23,7 +23,7 @@ function embeddedElement(id)  {
     if(counter == 3) {
         amount = value;
         balance -= amount;
-        document.getElementById("tdBalance"+i).innerHTML = balance;
+        document.getElementById("tdBalance" + n).innerHTML = balance;
         saveObject(new costObject(attributes[0], attributes[1], attributes[2], amount, balance));
         attributes = [];
         counter=-1;
