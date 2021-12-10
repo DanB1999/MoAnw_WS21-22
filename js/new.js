@@ -40,7 +40,7 @@ function newRow()   {
     "<td id='tdAmount" + num + "'><input type='number' id='amount' onchange='embeddedElement(\"amount\")' value=''></td>"+
     "<td id='tdBalance" + num + "'></td>";
     const tr = document.createElement('tr');
-    tr.id = "tr"+i;
+    tr.id = "tr"+ num;
     tr.innerHTML=text;
     document.getElementById('tbody').appendChild(tr);
     num++
