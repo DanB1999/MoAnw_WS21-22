@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var version = 0; 
+const version = 0; 
 
 self.addEventListener("install", installEvent => {
   console.log("Installable");
@@ -28,8 +28,9 @@ self.addEventListener("fetch", fetchEvent => {
 });
 
 self.addEventListener('activate', function(event) {
-  console.log(ServiceWorker.state)
   
+  console.log(ServiceWorker.state)
+  /*
   var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
   event.waitUntil(
@@ -44,7 +45,7 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
-  
+  */
 });
 
 self.addEventListener('message', e => {
