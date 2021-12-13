@@ -85,7 +85,7 @@ if ("serviceWorker" in navigator) {
         .register("/serviceWorker.js")
         .then(function(registration) {
             console.log("service worker registered!")
-            document.getElementById("updateButton").onclick = function()    {
+            document.getElementById("").onclick = function()    {
                 registration.update();
                 console.log("Service Worker updated!")
             }

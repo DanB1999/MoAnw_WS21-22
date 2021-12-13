@@ -5,6 +5,7 @@ const assets = [
   "/css/style.css",
   "/js/app.js",
 ];
+var version; 
 
 self.addEventListener("install", installEvent => {
   console.log("Installable");
@@ -12,7 +13,7 @@ self.addEventListener("install", installEvent => {
     caches
     .open(staticDevCoffee)
     .then(cache => {
-      cache.addAll(assets);
+      cache.add(assets);
     })
     .catch(console.log(" Service Worker installed"))
   );
@@ -52,4 +53,8 @@ self.addEventListener('message', e => {
   }
   
 });
+
+function changeVersion() {
+  version++;
+}
 
