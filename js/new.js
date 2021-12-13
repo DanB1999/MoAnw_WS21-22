@@ -75,7 +75,7 @@ function getObjects()   {
     newRow();
 }
 
-
+/*
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
       navigator.serviceWorker
@@ -84,6 +84,19 @@ if ("serviceWorker" in navigator) {
         .catch(err => console.log("service worker not registered", err));
     });
 }
+*/
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
+      // registration worked
+      console.log('Registration succeeded.');
+      button.onclick = function() {
+        registration.update();
+      }
+    }).catch(function(error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+    });
+  };
   
   
   
