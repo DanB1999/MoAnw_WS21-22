@@ -7,13 +7,14 @@ const assets = [
 ];
 
 self.addEventListener("install", installEvent => {
+  console.log("Installable");
   installEvent.waitUntil(
     caches
     .open(staticDevCoffee)
     .then(cache => {
       cache.addAll(assets);
     })
-    .catch(console.log(""))
+    .catch(console.log(" Service Worker installed"))
   );
 });
 
