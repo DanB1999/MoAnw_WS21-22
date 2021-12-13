@@ -29,7 +29,7 @@ self.addEventListener("fetch", fetchEvent => {
 
 self.addEventListener('activate', function(event) {
   console.log(ServiceWorker.state)
-  /*
+  
   var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
   event.waitUntil(
@@ -44,7 +44,7 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
-  */
+  
 });
 
 self.addEventListener('message', e => {
