@@ -13,7 +13,7 @@ self.addEventListener("install", installEvent => {
     caches
     .open(staticDevCoffee)
     .then(cache => {
-      cache.add(assets);
+      cache.addAll(assets);
     })
     .catch(console.log(" Service Worker installed"))
   );
