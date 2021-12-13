@@ -89,8 +89,9 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
       // registration worked
       console.log('Registration succeeded.');
-      button.onclick = function() {
+      document.getElementById("updateButton").onclick = function() {
         registration.update;
+        console.log("Service Worker updated")
       }
     }).catch(function(error) {
       // registration failed
