@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var version; 
+var version = 0; 
 
 self.addEventListener("install", installEvent => {
   console.log("Installable");

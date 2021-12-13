@@ -75,9 +75,6 @@ function getObjects()   {
     newRow();
 }
 
-//document.addEventListener("")
-
-
 
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
