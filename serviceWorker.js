@@ -34,6 +34,7 @@ self.addEventListener('activate', function(event) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
           if (cacheAllowlist.indexOf(cacheName) === -1) {
+            console.log("Alter Cache gelöscht");
             return caches.delete(cacheName);
           }
         })
