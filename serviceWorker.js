@@ -29,11 +29,7 @@ self.addEventListener("fetch", fetchEvent => {
 
 self.addEventListener('activate', async (event) => {
 
-  const existingCaches = await caches.keys();
-  const invalidCaches = existingCaches.filter(c => c !== cacheName);
-  await Promise.all(invalidCaches.map(ic => caches.delete(ic)));
-  /*
-  var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
+  var cacheAllowlist = ['dev-coffee-site-v1'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -47,7 +43,7 @@ self.addEventListener('activate', async (event) => {
       );
     })
   );
-  */
+  
 });
 
 self.addEventListener('message', e => {
