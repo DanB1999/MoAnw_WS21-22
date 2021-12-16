@@ -18,12 +18,12 @@ function embeddedElement(id)  {
     var elem = document.getElementById(id);
     var value = elem.value;
     var x = document.getElementById(id).parentElement.id;
-    document.getElementById(x).innerHTML = value;
+    document.getElementById(x).innerHTML = value + " €";
     attributes.set(id, value);   
     if(attributes.size == 4) {
         amount = attributes.get("amount");
         balance -= amount;
-        document.getElementById("tdBalance" + num).innerHTML = balance;
+        document.getElementById("tdBalance" + num).innerHTML = balance + " €";
         saveObject(new costObject(attributes.get("desc"), attributes.get("date"), attributes.get("cat"), amount, balance));
         attributes.clear();
         counter=-1;
