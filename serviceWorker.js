@@ -56,6 +56,8 @@ self.addEventListener('message', e => {
 function changeVersion() {
   staticDevCoffee = "dev-coffee-site-v" + num;
   console.log(num);
-  number++;
+  caches.open('v1').then(function(cache) {
+    return cache.add('/js/new.js');
+  })
 }
 
