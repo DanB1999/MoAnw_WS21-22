@@ -8,6 +8,7 @@ const assets = [
 var number = 5; 
 
 self.addEventListener('install', function(event) {
+  self.skipWaiting();
   // We pass a promise to event.waitUntil to signal how 
   // long install takes, and if it failed
   console.log("Install Service Worker")
