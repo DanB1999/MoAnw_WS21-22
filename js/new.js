@@ -18,7 +18,8 @@ function embeddedElement(id)  {
     var elem = document.getElementById(id);
     var value = elem.value;
     var x = document.getElementById(id).parentElement.id;
-    document.getElementById(x).innerHTML = value + " €";
+    if(id == "amount") value += " €";
+    document.getElementById(x).innerHTML = value;
     attributes.set(id, value);   
     if(attributes.size == 4) {
         amount = attributes.get("amount");
