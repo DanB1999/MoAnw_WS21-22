@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var number = 4; 
+var number = 5; 
 
 self.addEventListener('install', function(event) {
   // We pass a promise to event.waitUntil to signal how 
