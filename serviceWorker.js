@@ -27,6 +27,23 @@ self.addEventListener("fetch", fetchEvent => {
   );
 });
 
+self.addEventListener('install', function(event) {
+  // We pass a promise to event.waitUntil to signal how 
+  // long install takes, and if it failed
+  event.waitUntil(
+    // We open a cache…
+    caches.open('simple-sw-v1').then(function(cache) {
+      // And add resources to it
+      return cache.addAll([
+        './',
+        '/index.html',
+        '/css/style.css',
+        '/js/new.js'
+      ]);
+    })
+  );
+});
+/*
 self.addEventListener('activate', async (event) => {
 
   var cacheAllowlist = ['dev-coffee-site-v1'];
@@ -45,7 +62,7 @@ self.addEventListener('activate', async (event) => {
   );
   
 });
-
+*/
 self.addEventListener('message', e => {
   if (e.data === 'skipWaiting') {
     skipWaiting();
