@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var version = 0; 
+var num = 2; 
 
 self.addEventListener("install", installEvent => {
   console.log("Installable");
@@ -27,9 +27,11 @@ self.addEventListener("fetch", fetchEvent => {
   );
 });
 
-self.addEventListener('activate', function(event) {
-  
-  console.log(ServiceWorker.state)
+self.addEventListener('activate', async (event) => {
+
+  const existingCaches = await caches.keys();
+  const invalidCaches = existingCaches.filter(c => c !== cacheName);
+  await Promise.all(invalidCaches.map(ic => caches.delete(ic)));
   /*
   var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
 
@@ -56,8 +58,8 @@ self.addEventListener('message', e => {
 });
 
 function changeVersion() {
-  version++;
-  console.log(version);
-  ServiceWorker.update();
+  staticDevCoffee = "dev-coffee-site-v" + num;
+  console.log(num);
+  num++;
 }
 
