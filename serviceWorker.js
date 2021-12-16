@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var number = 3; 
+var number = 4; 
 
 self.addEventListener("install", installEvent => {
   console.log("Installable");
@@ -70,4 +70,7 @@ self.addEventListener('message', e => {
   
 });
 
+function changeVersion() {
+  number++;
+}
 

@@ -88,8 +88,6 @@ if ("serviceWorker" in navigator) {
 }
 */
 
-function changeVersion() {
-    version++;
 
 
 if ('serviceWorker' in navigator) {
@@ -107,7 +105,7 @@ if ('serviceWorker' in navigator) {
       console.log('Registration failed with ' + error);
     });
   };
-}
+
 
 /*
 if (!navigator.serviceWorker.controller) {
