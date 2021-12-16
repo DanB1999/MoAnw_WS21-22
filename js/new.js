@@ -12,6 +12,7 @@ const attributes = new Map();
 var balance = 0;
 var counter = 0;
 var num = 1;
+var version = 1;
 
 function embeddedElement(id)  {
     var amount;
@@ -86,9 +87,13 @@ if ("serviceWorker" in navigator) {
     });
 }
 */
-/*
+
+function changeVersion() {
+    version++;
+
+
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
+    navigator.serviceWorker.register('/serviceWorker.js?v=' + version).then(function(registration) {
       // registration worked
       console.log('Registration succeeded.');
       /*
@@ -96,13 +101,15 @@ if ('serviceWorker' in navigator) {
         registration.update();
         console.log("Service Worker updated")
       }
-      
+      */
     }).catch(function(error) {
       // registration failed
       console.log('Registration failed with ' + error);
     });
   };
-*/
+}
+
+/*
 if (!navigator.serviceWorker.controller) {
   console.log("This page is not controlled by a ServiceWorker");
 }
@@ -141,6 +148,7 @@ navigator.serviceWorker.getRegistration().then(function(reg) {
     showWaitingMessage();
   }
 });
+*/
 
 
   
