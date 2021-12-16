@@ -52,8 +52,8 @@ function showObject(elem)    {
     var text = "<td id='tdDesc" + num + "'>" + elem.desc + "</th>"+
     "<td id='tdDate" + num + "'>" + elem.date + "</td>"+
     "<td id='tdCat" + num + "'>" + elem.cat + "</td>"+
-    "<td id='tdAmount" + num + "'>" + elem.amount + "</td>"+
-    "<td id='tdBalance" + num + "'>" + elem.balance + "</td>";
+    "<td id='tdAmount" + num + "'>" + elem.amount + " €" + "</td>"+
+    "<td id='tdBalance" + num + "'>" + elem.balance + " €" + "</td>";
     const tr = document.createElement('tr');
     tr.id = "tr" + num;
     tr.innerHTML=text;
