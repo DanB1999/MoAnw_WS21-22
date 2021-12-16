@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var num = 2; 
+var number = 2; 
 
 self.addEventListener("install", installEvent => {
   console.log("Installable");
@@ -56,6 +56,6 @@ self.addEventListener('message', e => {
 function changeVersion() {
   staticDevCoffee = "dev-coffee-site-v" + num;
   console.log(num);
-  num++;
+  number++;
 }
 
