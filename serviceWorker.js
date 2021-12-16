@@ -5,7 +5,7 @@ const assets = [
   '/css/style.css',
   '/js/new.js',
 ];
-var number = 8; 
+var number = 9; 
 
 self.addEventListener('install', function(event) {
   self.skipWaiting();
