@@ -58,5 +58,6 @@ self.addEventListener('message', e => {
 function changeVersion() {
   version++;
   console.log(version);
+  serviceWorkerRegistration.update();
 }
 
