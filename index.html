@@ -33,8 +33,8 @@
           <div class="center">Home</div>
         </ons-toolbar>
         <ons-tabbar swipeable id="appTabbar" position="auto">
-          <ons-tab label="Markt" icon="md-zoom-in" page="home.html" active></ons-tab>
-          <ons-tab label="Suche" icon="ion-ios-create" page="forms.html"></ons-tab>
+          <ons-tab label="Markt" icon="md-zoom-in" page="marketSearch.html" active></ons-tab>
+          <ons-tab label="Suche" icon="ion-ios-create" page="productSearch.html"></ons-tab>
           <ons-tab label="Home" icon="ion-ios-home" page="home.html"></ons-tab>
           <ons-tab label="Karte" icon="ion-ios-home" page="animations.html"></ons-tab>
           <ons-tab label="Profil" icon="ion-ios-home" page="animations.html"></ons-tab>
@@ -66,10 +66,10 @@
                 Meine Märkte
               </div>
               <div class="content">
-                <div>
-                  <ons-button><ons-icon icon="ion-ios-thumbs-up"></ons-icon></ons-button>
-                  <ons-button><ons-icon icon="ion-ios-share"></ons-icon></ons-button>
-                </div>
+                <ons-list>
+                  <ons-list-item>Item A</ons-list-item>
+                  <ons-list-item>Item B</ons-list-item>
+                </ons-list>
               </div>
             </ons-card>
           </ons-col>
@@ -77,12 +77,14 @@
             <ons-card>
               <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%; height: 50px;">
               <div class="title">
-                Meine Märkte
+                Meine Produkte
               </div>
               <div class="content">
                 <div>
-                  <ons-button><ons-icon icon="ion-ios-thumbs-up"></ons-icon></ons-button>
-                  <ons-button><ons-icon icon="ion-ios-share"></ons-icon></ons-button>
+                  <ons-list>
+                    <ons-list-item>Item A</ons-list-item>
+                    <ons-list-item>Item B</ons-list-item>
+                  </ons-list>
                 </div>
               </div>
             </ons-card>
@@ -91,25 +93,25 @@
         <ons-card>
           <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%; height: 50px;">
           <div class="title">
-            Meine Märkte
+            Beliebt in der Nähe 
           </div>
           <div class="content">
-            <div>
-              <ons-button><ons-icon icon="ion-ios-thumbs-up"></ons-icon></ons-button>
-              <ons-button><ons-icon icon="ion-ios-share"></ons-icon></ons-button>
-            </div>
+            <ons-list>
+              <ons-list-item>Item A</ons-list-item>
+              <ons-list-item>Item B</ons-list-item>
+            </ons-list>
           </div>
         </ons-card>
         <ons-card>
-          <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
+          <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%; height: 50px;">
           <div class="title">
-            Awesome framework
+            Meine Einkaufslisten
           </div>
           <div class="content">
-            <div>
-              <ons-button><ons-icon icon="ion-ios-thumbs-up"></ons-icon></ons-button>
-              <ons-button><ons-icon icon="ion-ios-share"></ons-icon></ons-button>
-            </div>
+            <ons-list>
+              <ons-list-item>Item A</ons-list-item>
+              <ons-list-item>Item B</ons-list-item>
+            </ons-list>
           </div>
         </ons-card>
 
@@ -160,7 +162,7 @@
       </ons-page>
     </template>
     
-    <template id="forms.html">
+    <template id="marketSearch.html">
       <ons-page id="forms-page">
         <ons-list>
           <ons-list-header>Text input</ons-list-header>
