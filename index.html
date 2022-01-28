@@ -606,7 +606,7 @@
       <ons-page id="dialogs-page">
         <ons-toolbar>
           <div class="left">
-            <ons-back-button>Home</ons-back-button>
+            <ons-back-button>Suche</ons-back-button>
           </div>
           <div class="center"></div>
           <div class="right">
@@ -614,31 +614,39 @@
           </div>
         </ons-toolbar>
     
-        <ons-list-title>Notifications</ons-list-title>
-        <ons-list modifier="inset">
-          <ons-list-item tappable modifier="longdivider" onclick="ons.notification.alert('Hello, world!')">
-            <div class="center">
-              Alert
+        <ons-list-title>Suche filtern</ons-list-title>
+        <ons-list>
+          <ons-list-item tappable>
+            <label class="left">
+              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+            </label>
+            <label class="center" for="checkbox-0">
+              Vegan
+            </label>
+            <div class="right">
+              <ons-icon icon="fa-carrot" size="lg" class="right-icon"></ons-icon>
             </div>
           </ons-list-item>
-          <ons-list-item tappable modifier="longdivider" onclick="ons.notification.confirm('Are you ready?')">
-            <div class="center">
-              Simple Confirmation
+          <ons-list-item tappable>
+            <label class="left">
+              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+            </label>
+            <label class="center" for="checkbox-0">
+              Vegtarisch
+            </label>
+            <div class="right">
+              <ons-icon icon="fa-egg" size="lg" class="right-icon"></ons-icon>
             </div>
           </ons-list-item>
-          <ons-list-item tappable modifier="longdivider" onclick="ons.notification.prompt('What is your name?')">
-            <div class="center">
-              Prompt
-            </div>
-          </ons-list-item>
-          <ons-list-item tappable modifier="longdivider" onclick="ons.notification.toast('Hi there!', { buttonLabel: 'Dismiss', timeout: 1500 })">
-            <div class="center">
-              Toast
-            </div>
-          </ons-list-item>
-          <ons-list-item tappable modifier="longdivider" onclick="ons.openActionSheet({ buttons: ['Label 1', 'Label 2', 'Label 3', 'Cancel'], destructive: 2, cancelable: true })">
-            <div class="center">
-              Action/Bottom Sheet
+          <ons-list-item tappable>
+            <label class="left">
+              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+            </label>
+            <label class="center" for="checkbox-0">
+              Vegtarisch
+            </label>
+            <div class="right">
+              <ons-icon icon="fa-bread-slice" size="lg" class="right-icon"></ons-icon>
             </div>
           </ons-list-item>
         </ons-list>
