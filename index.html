@@ -33,9 +33,9 @@
           <div class="center">Home</div>
         </ons-toolbar>
         <ons-tabbar swipeable id="appTabbar" position="auto">
-          <ons-tab label="Markt" icon="md-zoom-in" page="marketSearch.html" active></ons-tab>
+          <ons-tab label="Markt" icon="md-zoom-in" page="marketSearch.html"></ons-tab>
           <ons-tab label="Suche" icon="ion-ios-create" page="productSearch.html"></ons-tab>
-          <ons-tab label="Home" icon="ion-ios-home" page="home.html"></ons-tab>
+          <ons-tab label="Home" icon="ion-ios-home" page="home.html" active></ons-tab>
           <ons-tab label="Karte" icon="ion-ios-home" page="animations.html"></ons-tab>
           <ons-tab label="Profil" icon="ion-ios-home" page="animations.html"></ons-tab>
 
@@ -163,9 +163,11 @@
     </template>
     
     <template id="marketSearch.html">
+      <p class="intro">
+       Marktsuche<br><br>
+      </p>
       <ons-page id="forms-page">
         <ons-list>
-          <ons-list-header>Marktsuche</ons-list-header>
           <ons-list-item class="input-items">
             <div class="left">
               <ons-icon icon="fa-question-circle-o" class="list-item__icon"></ons-icon>
@@ -183,22 +185,12 @@
     
           <ons-list-item>
             <label class="center" for="switch1">
-              Standort verwenden<span id="switch-status">&nbsp;(on)</span>
+              Standort verwenden<span id="switch-status">&nbsp;</span>
             </label>
             <div class="right">
               <ons-switch id="model-switch" input-id="switch1" checked="true"></ons-switch>
             </div>
           </ons-list-item>
-          <ons-list-item>
-            <label id="enabled-label" class="center" for="switch2">
-              Enabled switch
-            </label>
-            <div class="right">
-              <ons-switch id="disabled-switch" input-id="switch2"></ons-switch>
-            </div>
-          </ons-list-item>
-    
-          <ons-list-header>Select</ons-list-header>
           <ons-list-item>
             <div class="center">
               <ons-select id="select-input" style="width: 120px">
@@ -219,7 +211,7 @@
             </div>
           </ons-list-item>
     
-          <ons-list-header>Radio buttons</ons-list-header>
+          <!-- <ons-list-header>Radio buttons</ons-list-header>
           <ons-list-item tappable>
             <label class="left">
               <ons-radio class="radio-fruit" input-id="radio-0" value="Apples"></ons-radio>
@@ -243,8 +235,8 @@
               I love Bananas!
             </div>
           </ons-list-item>
-    
-          <ons-list-header>Checkboxes - <span id="checkboxes-header">Green,Blue</span></ons-list-header>
+     -->
+          <!-- <ons-list-header>Checkboxes - <span id="checkboxes-header">Green,Blue</span></ons-list-header>
           <ons-list-item tappable>
             <label class="left">
               <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
@@ -268,24 +260,9 @@
             <label class="center" for="checkbox-2">
               Blue
             </label>
-          </ons-list-item>
+          </ons-list-item> -->
     
-          <ons-list-header>Range slider</ons-list-header>
-          <ons-list-item>
-            Adjust the volume:
-            <ons-row>
-              <ons-col width="40px" style="text-align: center; line-height: 31px;">
-                <ons-icon icon="md-volume-down"></ons-icon>
-              </ons-col>
-              <ons-col>
-                <ons-range id="range-slider" value="25" style="width: 100%;"></ons-range>
-              </ons-col>
-              <ons-col width="40px" style="text-align: center; line-height: 31px;">
-                <ons-icon icon="md-volume-up"></ons-icon>
-              </ons-col>
-            </ons-row>
-            Volume:<span id="volume-value">&nbsp;25</span> <span id="careful-message" style="display: none">&nbsp;(careful, that's loud)</span>
-          </ons-list-item>
+          
         </ons-list>
     
         <script>
