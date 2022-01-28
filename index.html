@@ -166,12 +166,13 @@
       <p class="intro">
        Marktsuche<br><br>
       </p>
-        <ons-list>
-          <ons-list-item class="input-items">
-            <ons-search-input id="search-input" maxlength="50" placeholder="Search"></ons-search-input>
-          
-          </ons-list-item>
-    
+      <p style="text-align: center; margin-top: 10px;">
+        <ons-search-input
+          placeholder="Search"
+          onchange="ons.notification.alert('Searched for: ' + this.value)">
+        </ons-search-input>
+      </p>
+        <ons-list>  
           <ons-list-item>
             <label class="center" for="switch1">
               Standort verwenden<span id="switch-status">&nbsp;</span>
