@@ -234,13 +234,13 @@
         </ons-search-input>
       </p>
         <ons-list>
-          <ons-list-item>
+          <ons-list-item onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'})">
             <label class="center">
               <ons-icon icon="fa-filter" size="lg" class="left-icon"></ons-icon>
               <span id="name-display">Suche filtern</span>
             </label>
             <div class="right">
-              <ons-icon  onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'})" icon="fa-chevron-right" size="lg" class="right-icon"></ons-icon>
+              <ons-icon icon="fa-chevron-right" size="lg" class="right-icon"></ons-icon>
             </div>
 
           </ons-list-item>
@@ -609,9 +609,6 @@
             <ons-back-button>Suche</ons-back-button>
           </div>
           <div class="center"></div>
-          <div class="right">
-            <ons-toolbar-button id="info-button" onclick="fn.showDialog('popover-dialog')"></ons-toolbar-button>
-          </div>
         </ons-toolbar>
     
         <ons-list-title>Suche filtern</ons-list-title>
