@@ -35,7 +35,7 @@
         <ons-tabbar swipeable id="appTabbar" position="auto">
           <ons-tab label="Markt" icon="md-zoom-in" page="home.html" active></ons-tab>
           <ons-tab label="Suche" icon="ion-ios-create" page="forms.html"></ons-tab>
-          <ons-tab label="Home" icon="ion-ios-home" page="animations.html"></ons-tab>
+          <ons-tab label="Home" icon="ion-ios-home" page="home.html"></ons-tab>
           <ons-tab label="Karte" icon="ion-ios-home" page="animations.html"></ons-tab>
           <ons-tab label="Profil" icon="ion-ios-home" page="animations.html"></ons-tab>
 
@@ -54,11 +54,38 @@
     
     <template id="home.html">
       <ons-page>
+
         <p class="intro">
-          This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
+          Willkommen zurück!<br><br>
         </p>
+        <ons-card>
+          <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
+          <div class="title">
+            Awesome framework
+          </div>
+          <div class="content">
+            <div>
+              <ons-button><ons-icon icon="ion-ios-thumbs-up"></ons-icon></ons-button>
+              <ons-button><ons-icon icon="ion-ios-share"></ons-icon></ons-button>
+            </div>
+          </div>
+        </ons-card>
+        <ons-card>
+          <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
+          <div class="title">
+            Awesome framework
+          </div>
+          <div class="content">
+            <div>
+              <ons-button><ons-icon icon="ion-ios-thumbs-up"></ons-icon></ons-button>
+              <ons-button><ons-icon icon="ion-ios-share"></ons-icon></ons-button>
+            </div>
+          </div>
+        </ons-card>
+
+
     
-        <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
+        <!-- <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
           <div class="title">Pull Hook</div>
           <div class="content">Simple "pull to refresh" functionality to update data.</div>
         </ons-card>
@@ -81,7 +108,7 @@
         <ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
           <div class="title">Progress</div>
           <div class="content">Linear progress, circular progress and spinners.</div>
-        </ons-card>
+        </ons-card> -->
     
         <style>
           .intro {
