@@ -320,15 +320,18 @@
     </template>
     
     <template id="map.html">
-      <ons-page style="align-items: center;">
+      <ons-page>
       <p class="intro">
        Karte des Marktes<br><br>
       </p>
-      <object id="svgMap" data="karte.svg" type="image/svg+xml">
+      <div class="center">
+        <object id="svgMap" data="karte.svg" type="image/svg+xml">
   
-        <!---Fallback--->
-        Ihr Browser kann leider kein svg darstellen!  
-      </object>
+          <!---Fallback--->
+          Ihr Browser kann leider kein svg darstellen!  
+        </object>
+      </div>
+      
     
 
         <ons-list>
