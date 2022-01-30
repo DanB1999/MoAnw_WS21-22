@@ -324,7 +324,7 @@
       <p class="intro">
        Karte des Marktes<br><br>
       </p>
-      <object data="karte.svg" type="image/svg+xml">
+      <object id="svgMap" data="karte.svg" type="image/svg+xml">
   
         <!---Fallback--->
         Ihr Browser kann leider kein svg darstellen!  
@@ -386,8 +386,13 @@
           
         </ons-list>
     
-        <script>
+        <script><![CDATA[
           ons.getScriptPage().onInit = function () {
+            
+          var svg = document.getElementById('svgMap');
+          console.log(svg);
+          console.log(1 < 2);
+
             if (ons.platform.isAndroid()) {
               const inputItems = document.querySelectorAll('.input-items');
               for (i = 0; i < inputItems.length; i++) {
@@ -410,9 +415,13 @@
                 document.getElementById('checkboxes-header').innerHTML = currentColors;
               })
             }
+            function select(name) {
+              console.log("select function")
+            }
 
 
           }
+          ]]>
         </script>
     
         <style>
@@ -423,7 +432,7 @@
           .right-label {
             color: #666;
           }
-          
+
         </style>
       </ons-page>
     </template>
