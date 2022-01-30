@@ -48,7 +48,7 @@
       <path
          class="regal"
          onclick="select('Regal_A1')"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 16.606061,23.686388 h 5.881467 v 3.46301 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path406" />
