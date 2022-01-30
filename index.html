@@ -396,41 +396,6 @@
                   inputItems[i].setAttribute('modifier', 'nodivider');
               }
             }
-            var nameInput = document.getElementById('name-input');
-            var searchInput = document.getElementById('search-input');
-            var updateInputs = function (event) {
-              nameInput.value = event.target.value;
-              searchInput.value = event.target.value;
-              document.getElementById('name-display').innerHTML = event.target.value !== '' ? `Hello ${event.target.value}!` : 'Hello anonymous!';
-            }
-            nameInput.addEventListener('input', updateInputs);
-            searchInput.addEventListener('input', updateInputs);
-            document.getElementById('model-switch').addEventListener('change', function (event) {
-              if (event.value) {
-                document.getElementById('switch-status').innerHTML = `&nbsp;(on)`;
-                document.getElementById('enabled-label').innerHTML = `Enabled switch`;
-                document.getElementById('disabled-switch').disabled = false;
-              } else {
-                document.getElementById('switch-status').innerHTML = `&nbsp;(off)`;
-                document.getElementById('enabled-label').innerHTML = `Disabled switch`;
-                document.getElementById('disabled-switch').disabled = true;
-              }
-            });
-            document.getElementById('select-input').addEventListener('change', function (event) {
-              document.getElementById('awesome-platform').innerHTML = `${event.target.value}&nbsp;`;
-            });
-            var currentFruitId = 'radio-1';
-            const radios = document.querySelectorAll('.radio-fruit')
-            for (var i = 0; i < radios.length; i++) {
-              var radio = radios[i];
-              radio.addEventListener('change', function (event) {
-                if (event.target.id !== currentFruitId) {
-                  document.getElementById('fruit-love').innerHTML = `I love ${event.target.value}!`;
-                  document.getElementById(currentFruitId).checked = false;
-                  currentFruitId = event.target.id;
-                }
-              })
-            }
             var currentColors = ['Green', 'Blue'];
             const checkboxes = document.querySelectorAll('.checkbox-color')
             for (var i = 0; i < checkboxes.length; i++) {
@@ -445,14 +410,8 @@
                 document.getElementById('checkboxes-header').innerHTML = currentColors;
               })
             }
-            document.getElementById('range-slider').addEventListener('input', function (event) {
-              document.getElementById('volume-value').innerHTML = `&nbsp;${event.target.value}`;
-              if (event.target.value > 80) {
-                document.getElementById('careful-message').style.display = 'inline-block';
-              } else {
-                document.getElementById('careful-message').style.display = 'none';
-              }
-            })
+
+
           }
         </script>
     
@@ -464,6 +423,7 @@
           .right-label {
             color: #666;
           }
+          
         </style>
       </ons-page>
     </template>
