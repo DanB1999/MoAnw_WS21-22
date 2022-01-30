@@ -47,74 +47,74 @@
        transform="translate(-2.3792707,-26.12694)">
       <path
          class="regal"
-         onclick="select('Regal_A1')"
+         onclick="select('regal_A1')"
          style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 16.606061,23.686388 h 5.881467 v 3.46301 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path406" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 22.487528,23.686388 h 5.880089 v 3.46301 h -5.880089 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path408" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 28.367617,23.686388 h 5.881467 v 3.46301 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path410" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 34.249084,23.686388 h 5.880089 v 3.46301 h -5.880089 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path412" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 40.129173,-27.149398 h 5.881467 v 3.46301 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,-2.834646,135.02145,93.302796)"
          id="path414" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 46.01064,23.686388 h 5.881467 v 3.46301 H 46.01064 Z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path416" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 46.01064,20.224756 h 5.881467 v 3.461632 H 46.01064 Z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path418" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 40.129173,20.224756 h 5.881467 v 3.461632 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path420" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 34.249084,20.224756 h 5.880089 v 3.461632 h -5.880089 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path422" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 28.367617,20.224756 h 5.881467 v 3.461632 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path424" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 22.487528,20.224756 h 5.880089 v 3.461632 h -5.880089 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path426" />
       <path
          class="regal"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
          d="m 16.606061,20.224756 h 5.881467 v 3.461632 h -5.881467 z m 0,0"
          transform="matrix(2.834646,0,0,2.834646,135.02145,93.302796)"
          id="path428" />
