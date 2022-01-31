@@ -43,7 +43,9 @@ var watchId;
 
   function appendLocation(location, verb) {
     verb = verb || 'updated';
-    var newLocation = document.createElement('p');
-    newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
-    target.appendChild(newLocation);
+    //Google Geocoding API angfragen:
+    //"https://maps.googleapis.com/maps/api/geocode/json?latlng="+location.coords.latitude+","+location.coords.longitude+"&key=API_KEY"
+    //var newLocation = document.createElement('p');
+    target.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+    //target.appendChild(newLocation);
   }
