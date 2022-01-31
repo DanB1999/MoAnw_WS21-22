@@ -37,7 +37,7 @@ var watchId;
           }
 
     } else {
-        console.log("button doesnt work!")
+        target.innerHTML="";
     }
   });
 
