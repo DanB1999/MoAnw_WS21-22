@@ -1,4 +1,45 @@
 console.log("ProductService.js")
+
+const products = [
+    {
+        "id": 1,
+        "name": "Red Bull Energy",
+        "size": "0.25 l",
+        "type": "koffeinhaltige Getränke",
+        "price": "1.19 €"
+    },
+    {
+        "id": 2,
+        "name": "Rockstar Energy",
+        "size": "0.5 l",
+        "type": "koffeinhaltige Getränke",
+        "price": "1.79 €"
+    },
+    {
+        "id": 3,
+        "name": "Effect Energy",
+        "size": "0.33 l",
+        "type": "koffeinhaltige Getränke",
+        "price": "0.99 €"
+    },
+    {
+        "id": 4,
+        "name": "28Black Energy",
+        "size": "0.33 l",
+        "type": "koffeinhaltige Getränke",
+        "price": "1.49 €"
+    }
+]
+function getProducts() {
+    return products
+}
+function getProduct(name) {
+    products.forEach(element => {
+        if(element.name == name) {
+            //document.getEl
+        }
+    })
+}
 if (ons.platform.isAndroid()) {
       const inputItems = document.querySelectorAll('.input-items');
       for (i = 0; i < inputItems.length; i++) {
@@ -15,15 +56,5 @@ if (ons.platform.isAndroid()) {
     }
     nameInput.addEventListener('input', updateInputs);
     searchInput.addEventListener('input', updateInputs);
-    document.getElementById('model-switch').addEventListener('change', function (event) {
-      if (event.value) {
-        document.getElementById('switch-status').innerHTML = `&nbsp;(on)`;
-        document.getElementById('enabled-label').innerHTML = `Enabled switch`;
-        document.getElementById('disabled-switch').disabled = false;
-      } else {
-        document.getElementById('switch-status').innerHTML = `&nbsp;(off)`;
-        document.getElementById('enabled-label').innerHTML = `Disabled switch`;
-        document.getElementById('disabled-switch').disabled = true;
-      }
-    });
+    
     
