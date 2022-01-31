@@ -1,6 +1,6 @@
 {
   "name": "ProFinder Prototype",
-  "short_name": "DevCoffee",
+  "short_name": "ProFinder",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fdfdfd",
