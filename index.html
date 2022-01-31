@@ -175,12 +175,12 @@
               <ons-switch id="model-switch" input-id="switch1"></ons-switch>
             </div>
           </ons-list-item>
-          <ons-list-item onclick="fn.pushPage({'id': 'markets.html', 'title': 'Meine Märkte'})">
+          <ons-list-item>
             <label class="center">
               <span id="name-display">Meine Märkte</span>
             </label>
             <div class="right">
-              <ons-icon icon="fa-chevron-right" size="lg" class="right-icon"></ons-icon>
+              <ons-icon onclick="fn.pushPage({'id': 'markets.html', 'title': 'Meine Märkte'})" icon="fa-chevron-right" size="lg" class="right-icon"></ons-icon>
             </div>
 
           </ons-list-item>
@@ -631,6 +631,7 @@
         </style>
       </ons-page>
     </template>
+
     <template id="markets.html">
       <ons-page id="markets-page">
         <ons-toolbar>
@@ -646,51 +647,7 @@
         </ons-list>
     
         <script>
-          ons.getScriptPage().onInit = function () {
-            this.querySelector('ons-toolbar div.center').textContent = this.data.title;
-            var toolbarButton = ons.platform.isAndroid() ? ons.createElement(`<ons-icon icon="md-more-vert"></ons-icon>`) : ons.createElement(`<span>More</span>`);
-            var infoButton = document.getElementById('info-button');
-            infoButton.appendChild(toolbarButton);
-            var toastDialog = document.getElementById('toast-dialog');
-            toastDialog.parentNode.removeChild(toastDialog);
-            document.getElementById('dialogs-page').appendChild(toastDialog);
-            var timeoutID = 0;
-            window.fn.showDialog = function (id) {
-              var elem = document.getElementById(id);
-              if (id === 'popover-dialog') {
-                elem.show(infoButton);
-              } else {
-                elem.show();
-                if (id === 'modal-dialog') {
-                  clearTimeout(timeoutID);
-                  timeoutID = setTimeout(function() { fn.hideDialog(id) }, 2000);
-                }
-              }
-            };
-            window.fn.hideDialog = function (id) {
-              document.getElementById(id).hide();
-            };
-            const moreOptions = document.querySelectorAll('.more-options');
-            if (!ons.platform.isAndroid()) {
-              document.getElementById('watHmmSure-dialog').setAttribute('modifier', 'rowfooter');
-              for (option of moreOptions) {
-                option.hasAttribute('modifier') ?
-                  option.setAttribute('modifier', option.getAttribute('modifier') + ' longdivider') :
-                  option.setAttribute('modifier', 'longdivider');
-              }
-            } else {
-              for (option of moreOptions) {
-                option.hasAttribute('modifier') ?
-                  option.setAttribute('modifier', option.getAttribute('modifier') + ' nodivider') :
-                  option.setAttribute('modifier', 'nodivider');
-              }
-            }
-          };
-          document.getElementById('appNavigator').topPage.onDestroy = function () {
-            var toastDialog = document.getElementById('toast-dialog');
-            toastDialog.parentNode.removeChild(toastDialog);
-            document.querySelector('#dialogs-page .page__content').appendChild(toastDialog);
-          }
+          
         </script>
     
         <style>
