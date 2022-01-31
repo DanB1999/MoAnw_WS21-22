@@ -3,7 +3,7 @@
   "short_name": "ProFinder",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#fdfdfd",
+  "background_color": "#0000FF",
   "theme_color": "#0000FF",
   "orientation": "portrait-primary",
   "icons": [
