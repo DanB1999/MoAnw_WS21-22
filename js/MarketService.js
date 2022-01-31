@@ -27,12 +27,11 @@ var watchId;
     if (event.value) {
         console.log("worked");
         if ('geolocation' in navigator) {
-            document.getElementById('askButton').addEventListener('click', function () {
               navigator.geolocation.getCurrentPosition(function (location) {
                 appendLocation(location, 'fetched');
               });
               watchId = navigator.geolocation.watchPosition(appendLocation);
-            });
+            
           } else {
             target.innerText = 'Geolocation API not supported.';
           }
