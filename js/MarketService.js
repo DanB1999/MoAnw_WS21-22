@@ -25,6 +25,7 @@ var watchId;
   
   document.getElementById('model-switch').addEventListener('change', function (event) {
     if (event.value) {
+        console.log("worked");
         if ('geolocation' in navigator) {
             document.getElementById('askButton').addEventListener('click', function () {
               navigator.geolocation.getCurrentPosition(function (location) {
