@@ -11,7 +11,7 @@ if (ons.platform.isAndroid()) {
     searchInput.value = event.target.value;
     document.getElementById('name-display').innerHTML = event.target.value !== '' ? `Hello ${event.target.value}!` : 'Hello anonymous!';
   }
-  searchInput.addEventListener('input', updateInputs);
+  //searchInput.addEventListener('input', updateInputs);
 
 
 
