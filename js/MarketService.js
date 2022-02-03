@@ -14,6 +14,14 @@ if (ons.platform.isAndroid()) {
   //searchInput.addEventListener('input', updateInputs);
 
 
+window.fn.pushPage = function (page, anim) {
+    if (anim) {
+      document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title }, animation: anim });
+    } else {
+      document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title } });
+    }
+  };
+
 
 // Standort abfragen 
 var target = document.getElementById('target');
