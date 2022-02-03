@@ -86,7 +86,7 @@ function loadMarkets(elem)  {
     "<div class='name'>" + elem.name + "</div><div class='content'><ons-list><ons-list-item>" + elem.address + "</ons-list-item></ons-list></div></ons-card>"
     
     const listItem = document.createElement('ons-list-item');
-    listItem.innerHTML=text;
+    listItem.innerHTML=cardElement;
     document.getElementById('ons-list').appendChild(listItem);
 }
 
