@@ -1,4 +1,4 @@
-if (ons.platform.isAndroid()) {
+/* if (ons.platform.isAndroid()) {
     const inputItems = document.querySelectorAll('.input-items');
     for (i = 0; i < inputItems.length; i++) {
       inputItems[i].hasAttribute('modifier') ?
@@ -10,7 +10,7 @@ if (ons.platform.isAndroid()) {
   var updateInputs = function (event) {
     searchInput.value = event.target.value;
     document.getElementById('name-display').innerHTML = event.target.value !== '' ? `Hello ${event.target.value}!` : 'Hello anonymous!';
-  }
+  } */
   //searchInput.addEventListener('input', updateInputs);
 
 
