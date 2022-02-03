@@ -1,5 +1,11 @@
 console.log("ProductService.js")
-
+window.fn.pushPage = function (page, anim) {
+    if (anim) {
+      document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title }, animation: anim });
+    } else {
+      document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title } });
+    }
+  };
 const products = [
     {
         "id": 1,
@@ -50,11 +56,9 @@ if (ons.platform.isAndroid()) {
     }
     var searchInput = document.getElementById('search-input');
     var updateInputs = function (event) {
-      nameInput.value = event.target.value;
       searchInput.value = event.target.value;
       document.getElementById('name-display').innerHTML = event.target.value !== '' ? `Hello ${event.target.value}!` : 'Hello anonymous!';
     }
-    nameInput.addEventListener('input', updateInputs);
     searchInput.addEventListener('input', updateInputs);
-    
+
     
