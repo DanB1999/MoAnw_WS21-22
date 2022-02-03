@@ -1,4 +1,4 @@
-/* if (ons.platform.isAndroid()) {
+if (ons.platform.isAndroid()) {
     const inputItems = document.querySelectorAll('.input-items');
     for (i = 0; i < inputItems.length; i++) {
       inputItems[i].hasAttribute('modifier') ?
@@ -10,7 +10,7 @@
   var updateInputs = function (event) {
     searchInput.value = event.target.value;
     document.getElementById('name-display').innerHTML = event.target.value !== '' ? `Hello ${event.target.value}!` : 'Hello anonymous!';
-  } */
+  } 
   //searchInput.addEventListener('input', updateInputs);
 
 
@@ -54,41 +54,6 @@ var watchId;
   }
 
 // Meine Märkte 
-const markets= [
-    {
-        "name": "Rewe Center Rodgau",
-        "address": "Feldstraße 46, 63110 Rodgau Dudenhofen",
-
-    },
-    {
-        "name": "Rewe Center Frankfurt",
-        "address": "Mainzer Landstraße 330-360, 65933 Frankfurt am Main"
-    },
-    {
-        "name": "Rewe Center Langen",
-        "address": "Kurt-Schumacher-Ring 4, 63329 Egelsbach"
-    },
-]
-document.getElementById("markets-page").addEventListener("load", function() {
-    loadMarkets();
-}) 
-
-
-
-function loadMarkets()  {
-    markets.forEach(elem =>{
-        loadMarkets(elem);
-    })
-}
-
-function loadMarkets(elem)  {
-    var cardElement = "<ons-card><img src='https://monaca.io/img/logos/download_image_onsenui_01.png' alt='Onsen UI' style='width: 100%''>"+
-    "<div class='name'>" + elem.name + "</div><div class='content'><ons-list><ons-list-item>" + elem.address + "</ons-list-item></ons-list></div></ons-card>"
-    
-    const listItem = document.createElement('ons-list-item');
-    listItem.innerHTML=cardElement;
-    document.getElementById('ons-list').appendChild(listItem);
-}
 
  /*  this.querySelector('ons-toolbar div.center').textContent = this.data.title;
   var toolbarButton = ons.platform.isAndroid() ? ons.createElement(`<ons-icon icon="md-more-vert"></ons-icon>`) : ons.createElement(`<span>More</span>`);
