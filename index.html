@@ -545,7 +545,7 @@
         <ons-list>
           <ons-list-item tappable>
             <label class="left">
-              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+              <ons-checkbox class="checkbox-filter" input-id="checkbox-0" value="Red"></ons-checkbox>
             </label>
             <label class="center" for="checkbox-0">
               Vegan
@@ -556,7 +556,7 @@
           </ons-list-item>
           <ons-list-item tappable>
             <label class="left">
-              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+              <ons-checkbox class="checkbox-filter" input-id="checkbox-0" value="Red"></ons-checkbox>
             </label>
             <label class="center" for="checkbox-0">
               Vegtarisch
@@ -567,7 +567,7 @@
           </ons-list-item>
           <ons-list-item tappable>
             <label class="left">
-              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+              <ons-checkbox class="checkbox-filter" input-id="checkbox-0" value="Red"></ons-checkbox>
             </label>
             <label class="center" for="checkbox-0">
               Glutenfrei
@@ -578,7 +578,7 @@
           </ons-list-item>
           <ons-list-item tappable>
             <label class="left">
-              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+              <ons-checkbox class="checkbox-filter" input-id="checkbox-0" value="Red"></ons-checkbox>
             </label>
             <label class="center" for="checkbox-0">
               nachhaltige Erzeugung
@@ -593,7 +593,7 @@
         <ons-list>
           <ons-list-item tappable>
             <label class="left">
-              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+              <ons-checkbox class="checkbox-filter" input-id="checkbox-0" value="Red"></ons-checkbox>
             </label>
             <label class="center" for="checkbox-0">
               kohlenhydrat-arm
@@ -604,7 +604,7 @@
           </ons-list-item>
           <ons-list-item tappable>
             <label class="left">
-              <ons-checkbox class="checkbox-color" input-id="checkbox-0" value="Red"></ons-checkbox>
+              <ons-checkbox class="checkbox-filter" input-id="checkbox-0" value="Red"></ons-checkbox>
             </label>
             <label class="center" for="checkbox-0">
               protein-reich
@@ -616,10 +616,20 @@
         </ons-list>
         <section style="padding: 8px">
           <p></p>
-          <ons-button modifier="large">Suchen</ons-button>
+          <ons-button id="filter-search" modifier="large">Suchen</ons-button>
         </section>
     
-        <script src="js/MarketService.js"></script>
+        <script>
+        const checkboxes = document.querySelectorAll('.checkbox-filter')
+        var counter = 20;
+        for (var i = 0; i < checkboxes.length; i++) {
+          var checkbox = checkboxes[i];
+          checkbox.addEventListener('change', function (event) {
+            counter=counter-3;
+            document.getElementById("filter-search").innerHTML="Suchen ("+counter+")";
+          })
+        }
+        </script>
     
         <style>
           #lorem-dialog .dialog-container {
